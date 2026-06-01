@@ -1,0 +1,8 @@
+Initial attempt: Used a bubble sort which passed the tests, however was very slow. Bubble sort has worst case time complexity O(n^2). Next step was to consider a more efficient sorting algorithm.
+
+Second attempt: Manually wrote a merge sort to sort through the array. Then traverse the array backwards adding the two highest numbers of each group of three.
+
+Things to note after submission:
+- 54.3% of submissions used 5ms runtime, whereas mine used 1ms. This is because they used the Array.sort Java which used Quicksort (vs using Timsort - decided based on parameters passed gto the function)
+- I had not considered using Arrays.sort - which may be useful next time if pressed for time, as merge sort is a long algorithm
+- I iterated through some different ways of handling the edge cases of 1/2 candies being bought
