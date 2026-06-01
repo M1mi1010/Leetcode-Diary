@@ -1,0 +1,13 @@
+First attempts:
+- I was initially accidentally comparing pairs of strings rather than every string in the array. This posed the biggest problem in figuring out how to find the longest common prefix.
+- I then started comparing every possible pair of strings in the array and tried to keep track of the lcp for the pair and for all the comparisons that were already done.
+
+Final attempt:
+- I used a shrinking string method where the first item in the array is the lcp to begin with.
+- Then using a while loop and the String.startsWith method, I repeatedly shortened the lcp until the current string in the array starts with the same thing as lcp
+- If lcp gets to length 0 then return ""
+- Else the lcp at the end of the while loop matches all the strings in the array
+
+Stats (at the time of submission):
+- Runtime 0ms (Beats 100.0%)
+- Memory 43.14 MB (Beats 66.49%)
