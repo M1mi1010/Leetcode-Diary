@@ -1,0 +1,16 @@
+First attempts:
+- Originally I was thinking about this as a problem to do with moving elements and swapping them, however the key thing is that the end of the array is completely irrelevant. Keeping track of the number of unique values in the array correctly is what is important.
+
+Final attempt:
+- I have two pointers. One reads from the first item in the array, the second from the second.
+- The second pointer finds the next unique value to be replaced by the item at the first pointer
+- The issues was that I had to make sure the pointers were updating at the correct points in the code
+- And making sure the second pointer didn't run off the end of the array
+
+NOTE:
+- NOTE THAT IN THE WHILE LOOP YOU HAVE TO VALIDATE P2 BEFORE THE CORE LOGIC, ELSE YOU GET INDEX OUT OF BOUNDS
+- THE KEY IDEA IS TO USE TWO POINTERS
+
+Stats (at the time of submitting):
+- Runtime 1ms (Beats 76.55%)
+- Memory 46.85MB (Beats 22.58%)
