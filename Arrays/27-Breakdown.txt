@@ -1,0 +1,9 @@
+Final attempt:
+- One pointer for reading, one for writing
+- Reading pointer scans elements in the array
+- Writing pointer tracks the position where the next valid element should be placed
+- write is the number of elements not equal to the value
+
+Stats (at time of submission):
+- Runtime 0ms (Beats 100.00%)
+- Memory 43.57 MB (Beats 41.43%)
