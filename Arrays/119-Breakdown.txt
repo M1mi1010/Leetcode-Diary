@@ -1,0 +1,12 @@
+Both submissions passed on first attempt.
+
+Approach 1:
+- Creates Pascals triangle from scratch and then returns the list at the index at a specific parameter
+
+Approach 2:
+- Uses the combinatorics formula 
+
+Stats (at time of submission):
+- Approach 1:
+---> Runtime 2ms (Beats 20.18%)
+---> Memory 42.48 MB (Beats 68.42%)
