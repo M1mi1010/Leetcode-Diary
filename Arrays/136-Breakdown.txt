@@ -1,0 +1,6 @@
+- Sort the array and then search for the point where there isnt a pair 
+- Edge case is the final return statement where the largest value is the target
+
+Stats (at the time of submission):
+- Runtime (10ms)
+- 47.69 MB (Beats 7.36%)
