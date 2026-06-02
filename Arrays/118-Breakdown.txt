@@ -1,0 +1,8 @@
+First and only attempt:
+- First tackled the base cases of numRows being 0 and 1
+- Then the rest of the program builds the list of lists by starting from the second row
+- Each row then adds the 1 at the beginning, populates middle values by adding previous row values, then adds a 1 at the end
+
+Stats (at the time of submission):
+- Runtime 1ms (Beats 95.15%)
+- Memory 42.98 MB (Beats 97.78%)
