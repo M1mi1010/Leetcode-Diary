@@ -1,0 +1,10 @@
+First attempt:
+- Attempted converting array to list/arraylist, however you can't do this with an array of integers, and you also cant remove or add values to the list
+
+Final attempt:
+- Read all the values into a set
+- set.add returns false if its already in the set
+
+Stats (at the time of submission):
+- Runtime 10 ms (Beats 99.57%)
+- 98.06 MB (Beats 6.24%)
