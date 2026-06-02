@@ -1,0 +1,7 @@
+Final Attempt:
+- I checked every combination of land and water finishing times and then water and land times (order specific)
+- Not very efficient but passed all tests
+
+Stats (at the time of submission):
+- Runtime 6ms (Beats 8.73%)
+- Memory 47.11 MB (Beats 9.92%)
