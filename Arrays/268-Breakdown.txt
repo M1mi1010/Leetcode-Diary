@@ -1,0 +1,27 @@
+First attempts:
+- Convert the array into a more flexible data type and then compare them
+
+Attempt 1 passed:
+- Created a hashset. Added all the numbers from the array and then removed the numbers from 0 to array size + 1
+
+Attempt 2 passed:
+- Sum all the numbers from 0 to nums.length + 1
+- Then sum all the numbers in the array, then subtract two to find missing number
+- Problem: I used IntStream which added to the runtime of the solution because it has more overhead than a simple loop. You need to create an IntStream object, sets up stream machinery, invokes stream operations, then summation is performed.
+
+Attempt 3 passed:
+- Used a loop instead of IntStream
+
+Stats (at time of submission):
+- Attempt 1:
+--> Runtime 6 ms (Beats 17.07%)
+--> Memory 47.42 MB (Beats 31.28%)
+
+- Attempt 2:
+--> Runtime 2 ms (Beats 21.90%)
+--> Memory 47.39 MB (Beats 46.98%)
+
+- Attempt 3:
+--> Runtime 0 ms (Beats 100.00%)
+--> Memory 46.97 MB (Beats 94.52%)
+
