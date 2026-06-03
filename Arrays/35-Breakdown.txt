@@ -1,0 +1,6 @@
+Final attempt:
+- Binary search. Return left if not in array, mid if it is.
+
+Stats (at time of submission):
+- Runtime 0 ms (Beats 100.00%)
+- Memory 44.74 MB (Beats 46.69%)
