@@ -1,0 +1,6 @@
+Final attempt:
+- Add items to a map until the value stored in the map is greater than the required value
+
+Stats (at time of submission):
+- Runtime: 19 ms (Beats 11.94%)
+- Memory: 52.62 MB (Beats 80.45%)
