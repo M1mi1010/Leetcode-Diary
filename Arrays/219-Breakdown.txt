@@ -1,0 +1,9 @@
+First attempt passed:
+- Traverse the array of numbers and added them to a list, checking if the item was already in the list and finding the last index satisfies the condition
+
+Final attempt passed:
+- Did the same thing but using a map and updating the last occurence of the item
+
+Stats (at time of submission):
+- Runtime: 23ms (Beats 80.48%)
+- Memory: 91.03 MB (Beats 5.17%)
