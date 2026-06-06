@@ -1,0 +1,7 @@
+Final attempt:
+- See how long you traverse the array until two adjacent items aren't consecutive integers
+- Then write the set to the list
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 78.10%)
+- Memory: 48.42 MB (Beats 5.11%)
