@@ -1,0 +1,7 @@
+Final attempt:
+- Used two pointers, one for inserting values and another for reading values
+- Key was to check when NOT 0
+
+Stats (at the time of submission):
+- Runtime: 2 ms (91.74%)
+- Memory: 47.44 MB (92.35%)
