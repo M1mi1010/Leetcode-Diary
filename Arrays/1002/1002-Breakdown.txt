@@ -1,0 +1,6 @@
+Final attempt:
+- Used two maps to keep track of frequencies
+
+Stats (at time of submission):
+- Runtime: 20 ms (Beats 9.91%)
+- Memory: 47.39 MB (Beats 5.32%)
