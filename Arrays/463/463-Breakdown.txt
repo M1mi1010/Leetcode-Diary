@@ -1,0 +1,11 @@
+First attempts:
+- Tried to consider all three cases of squares and then increment total based on that
+
+Final attempt:
+- I add 4 for each tile 
+- Then check the up and left tile, if they are 1 then that means ssubtract 2 from the total
+- Careful consideration to check if the tile is first in column/row
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 99.93%)
+- Memory: 47.52 MB (Beats 15.88%)
