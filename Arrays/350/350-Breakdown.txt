@@ -1,0 +1,8 @@
+Final attempt:
+- Read all the values from nums1 into the map
+- Then compare each value in num2 to the map
+- If the number is in the map, decrease the number of instances in map
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 95.51%)
+- Memory: 45.32 MB (Beats 10.89%)
