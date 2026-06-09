@@ -1,0 +1,14 @@
+First few attempts:
+- Terrible runtime (12, 6, 5)
+
+Main struggle:
+- Converting a set to an array
+
+Final attempt:
+- Add each item in the array to a set
+- Then create a set containing the items that were in the set and the array
+- Then convert set to array
+
+Stats (at the time of submission):
+- Runtime: 2 ms (Beats 97.99%)
+- Memory: 44.97 MB (Beats 56.82%)
