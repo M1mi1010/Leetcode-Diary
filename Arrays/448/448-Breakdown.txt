@@ -1,0 +1,15 @@
+First attempts:
+- Adding all the items in the set to a list 
+- Removing array items from the list and return remaining elements - WORKS but was too slow
+
+Final attempt:
+- Created duplicate array
+- Check each item in param array, and then set its index in the duplicate array to be -1
+- Then loop through the duplicate array to see which indices are not -1
+- These correlate to the missing values (+1 because 0 indexing)
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 96.57%)
+- Memory: 70.19 MB (Beats 40.19%)
+
+NOTE: Java arrays are zero initialised
