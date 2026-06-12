@@ -1,0 +1,9 @@
+First attempt:
+- Used a set to avoid having to write skip duplicates logic
+
+Final attempt:
+- Used arrays.sort and then iterate through until 3 unique values found
+
+Stats (at time of submission):
+- Runtime: 7ms (Beats 34.33%)
+- Memory: 45.42 (Beats 25.57%)
