@@ -1,0 +1,9 @@
+First attempt:
+- Used two pointers, n then the right pointer is compared to left pointer and swapped left and right elements 
+
+Final attempt:
+- Used the same two pointer idea but instead of swapping, write to a new array, using a third pointer to keep track of index
+
+Stats (at time of submission):
+- Runtime: 1ms (Beats 100.00%)
+- Memory: 47.21 MB (Beats 63.40%)
