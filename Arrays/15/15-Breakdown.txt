@@ -1,0 +1,12 @@
+First attempt:
+- Initially tried to do two pointers but then I forgot to sort array
+
+Final attempt:
+- Sort array
+- Start with the first item in the array and then do two pointers on the remaining elements of the array
+- Two pointer left value is always reset to i + 1
+- NOTE: skip duplicates for left when a triple is found
+
+Stats (at time of submission):
+- Runtime: 27 ms (Beats 98.92%)
+- Memory: 57.37 MB (Beats 32.60%)
