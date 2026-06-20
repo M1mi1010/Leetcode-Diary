@@ -1,0 +1,13 @@
+First attempts:
+- Initially had been using a for loop and two pointers
+- One pointer would be at the end and the other would go through each combination in the previous eleemnts from 0 to pointer2
+- Problem: Brute force, inefficient, didnt have any logic checking which would skip comparisns
+
+Final attempt:
+- Used integers for pointers (no for loop)
+- Move the pointer for the limiting pointer 
+- Compare current area to the current max area found
+
+Sats (at the time of submission):
+- Runtime: 4 ms (Beats 94.24%)
+- Memory: 77.48 MB (Beats 28.25%)
