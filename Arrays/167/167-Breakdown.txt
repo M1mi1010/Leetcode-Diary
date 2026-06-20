@@ -1,0 +1,7 @@
+Final attempt:
+- Used two standard pointer method to find the pair
+- Used a boolean flag to know when the pair is found
+
+Stats (at time of submssion):
+- Runtime: 2 ms (Beats 96.17%)
+- Memory: 48.34 MB (Beats 60.22%)
