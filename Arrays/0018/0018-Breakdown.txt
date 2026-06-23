@@ -1,0 +1,16 @@
+First attempts:
+- Using standard 3 sum (fixed first pointer and then two additional ones in a while loop)
+- Used a hash map to store the trio and then how far it would be from the sum but then I realised it would be hard to figure out the minimum distance after the hashmap to be full
+- Then I went to use a list instead of the hashmap and just cleared and updated the list if the distance of the current triplets sum was less than all the previously recorded distances
+
+Final attempt:
+- Realised I didn't need a list and instead using the same logic for lastMin distance from target, updating the sum of the current list
+- Then return target if current sum is target
+- Else returning the last sum which is the minimum sum
+
+Optimisation:
+- Skipping duplicatees for fixed pointer
+
+Stats (at time of submission):
+- Runtime: 15 ms (Beats 98.05%)
+- Memory: 45.63 MB (Beats 30.29%)
