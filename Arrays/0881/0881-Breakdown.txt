@@ -1,0 +1,47 @@
+First attempts:
+- Sort array
+- Standard two pointer approach
+- Then modified to suit context
+
+Final attempt:
+- Had to consider what would happen when p1 == p2 to make basic tests pass
+
+Optimisation:
+- Mostly involved simlifing the if statements I had:
+--> Notice that number of boats increases either wat, elseif block is the same as else etc.
+
+while (p1 <= p2) {
+    //Handling one left over between p1 p2
+    if (people[p1] + people[p2] > limit) {
+        noBoats++;
+        p2--;
+    }
+    else if (people[p1] + people[p2] < limit){
+        p1++;
+        p2--;
+        noBoats++;
+    }
+    else { 
+        p1++;
+        p2--;
+        noBoats++;
+    }
+}
+
+TO 
+while (p1 <= p2) {            
+    //Handling one left over between p1 p2
+    if (people[p1] + people[p2] > limit) {
+        p2--;
+    }
+    else { 
+        p1++;
+        p2--;
+    }
+    noBoats++;
+}
+
+
+Stats (at time of submission):
+- Runtime: 19ms (Beats 98.31%)
+- Memory: 56.67 MB (Beats 20.25%)
