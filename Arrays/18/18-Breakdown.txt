@@ -1,0 +1,10 @@
+First attempts:
+- I had the right idea but my implementation wasn't the best, using while loops and integers for a,b,c,d when I couldve used a for loop
+
+Final attempt:
+- Working solution when I had a for loop for a, then a for loop for b which is always one more than the value of a
+- Then optimised the solution to check when a pointer points to a value that is larger than the target
+
+Stats (at time of submission):
+- Runtime 16 ms (Beats 93.18%)
+- Memory 45.72 MB (Beats 62.31%)
