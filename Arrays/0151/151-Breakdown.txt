@@ -1,0 +1,23 @@
+First attempt:
+- Used trim and a regex to split the string on any whitespace, originally was misusing bracketss
+- Then a standard two pointer to swap words in array then join
+- Had runtime 8ms, 36.37%
+
+Optimisation:
+- First changed the implementation to just assign to a new array 
+- Then used a string concatination but I didn't know s += words[i] builds a new string item each time it runs so this was 11 ms complexity which is worse than the 8ms for my original
+- Then I changed to using a string builder which was strill 8ms 
+
+Need to come back and instead do:
+do NOT split
+do NOT store all words
+scan string from end
+build result in one pass
+
+So instead of:
+
+split → array → swap → join
+
+do:
+
+scan → extract word → append → repeat
