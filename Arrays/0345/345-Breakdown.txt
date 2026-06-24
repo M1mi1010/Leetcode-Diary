@@ -1,0 +1,16 @@
+First attempts:
+- Originally was converting the string to uppercase which I didnt realise returns a new string (e.i need to write s = s.toUpperCase) - however this wasnt even needed
+
+First working attempt:
+- List of all vowels in upper and lower case created
+- Standard two pointer with two inner while loops incrementing p1 and p2 until vowels were found
+- Then if p1 is still less than p2, swap the values
+- Runtime 8ms (Beats 10.96%), Memory 46.68MB (Beats 50.31%)
+
+Optimisation:
+- Contains for a list has time complexity O(n), changing to a set which takes advantage of hashing got runtime to 4ms 35.49%
+- Using a helper function to determine if a character is a vowel was faster than looking up in a set (3ms 75.38%)
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 75.38%)
+- Memory: 46.82 MB (Beats 23.85%)
