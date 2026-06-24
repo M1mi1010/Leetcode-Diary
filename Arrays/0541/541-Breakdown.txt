@@ -1,0 +1,15 @@
+First attempts:
+- Got confused by the k and 2k usage and then the special cases
+- Accidentally focused on 2 and was swapping adjacent numbers which only worked when k was 2
+- Focused too much on the special cases
+
+Final attempt:
+- Focused on breaking down the array into groups, each group being a place where the items need to be reversed
+- Additional pointer for determining the beginning of each group to be reversed
+- Outer while loop for ensuring the starting group pointer would be valid
+- Special case handling: the second pointer (determining the end of the set) is set to be the minimum value between the end of the array or the end of the set, ensuring p2 is always valid
+- Then a standard two pointer swapping and finally updating the start of block pointer
+
+Stats (at time of submission):
+- Runtime: 1ms (Beats 96.14%)
+- Memory: 45.08 MB (Beats 13.39%)
