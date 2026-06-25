@@ -1,0 +1,12 @@
+First attempts:
+- Standard one pointer at 0 and then another at 1, reading though the array with p2 until an even is found
+- Had to consider case that the first items in the array are already even
+- Forgot to consider the pointers moving together and so read could in theory have been less than write
+- Terrible complexity, 28ms 5.1%
+
+Final attempt:
+- Modified code to use a two pointer approach where one starts from the end until an odd number is found, and the other from the start until an even is found
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 46.66 MB (Beats 84.13%)
