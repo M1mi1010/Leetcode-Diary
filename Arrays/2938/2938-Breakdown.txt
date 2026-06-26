@@ -1,0 +1,9 @@
+First attempts:
+- Tried to do this using a two pointer approach but wasn't working
+
+Final attempt:
+- Used simple for loop that counts the number of 1s before a 0
+
+Stats (at time of submission):
+- Runtime: 7ms (Beats 100.00%)
+- Memory: 47.88 MB (Beats 19.94%)
