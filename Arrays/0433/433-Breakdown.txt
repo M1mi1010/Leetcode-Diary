@@ -1,0 +1,7 @@
+Final attempt:
+- Read through the array finding counting the number of instances of a character and then write the count and character to the same array
+- Return the value of writeTo which stores the value of the index to be next written to - so therefore is the same as the number of groups
+
+Stats (at time of submssion):
+- Runtime: 1 ms (Beats 9l.87%)
+- Memory: 45.43 MB (Beats 48.86%)
