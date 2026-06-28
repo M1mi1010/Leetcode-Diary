@@ -16,3 +16,7 @@ eturn false
 - Else return true
 
 NOTE: condition on outer while loop
+
+Stats (at time of submission):
+- Runtime: 13 ms (Beats 90.80%)
+- Memory: 47.48 MB (Beats 57.70%)
