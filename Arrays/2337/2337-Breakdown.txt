@@ -1,0 +1,18 @@
+First attempts:
+- Originally tried to similate swaps and compare the start and modify it until it matches the target 
+---> Didn't work because you might have to do several swaps to get the piece in correct position and I was only comparing adjacent positions, assumed one swap would fix 
+- Used a two pointer with the array after all the underscores
+---> Didn't work because then when the _ are removed you dont know if the characters can be moved to the position in the target
+- Then used a two pointer to skip underscores
+
+Final attempt: 
+- Two pointer where both point to 0 in target and start string
+- Then incremement them until a piece is found
+- Then if both the ends of the strings are passed, the rest was underscores and return true
+eturn false
+- If the index stopped at dont have matching pieces return false because the pieces have to be the same - they cannot cross
+- If its an L and the point in start string is less than the point in the target string return false - notice how in test 1 (VALID) in start L is at 1 and in the result its in 0. 
+- Opposite for right
+- Else return true
+
+NOTE: condition on outer while loop
