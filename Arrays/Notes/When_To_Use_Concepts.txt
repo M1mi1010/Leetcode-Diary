@@ -1,0 +1,4 @@
+**Fast and Slow pointer:**
+- Checking if linked list has a cycle
+- Detecting if a process repeats forever or will stop
+- Finding duplicates in a set of numbers with O(1) memory
