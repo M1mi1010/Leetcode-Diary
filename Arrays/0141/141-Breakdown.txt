@@ -1,0 +1,11 @@
+First attmept:
+- Used a bigger while loop to because I wasnt sure which conditions to use for the while loop
+
+Final attempt:
+- Slow and fast initialised to head 
+- While loop traversing list whilst fast isnt null and fast.next isnt null (need to check against fast not slow)
+- If slow and fast are equal, a loop was found
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00)
+- Memory: 46.73 (Beats 51.56%)
