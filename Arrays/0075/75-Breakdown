@@ -1,0 +1,11 @@
+First attempt:
+- Initially wanted to use a two pointer approach to swap eements around because the q says in place
+
+Final attempt:
+- Remembered in place just means that you can't use any additional memory, not that I have to swap elements
+- Read through the array and counted the number of zeros, ones and twos
+- Then set the indexeds of each element in the array using the counters 
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.31 MB (Beats 76.27%)
