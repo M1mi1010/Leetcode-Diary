@@ -1,0 +1,13 @@
+First attempts:
+- Was a bit confused on whether a data structure would be needed but eventually found that I only needed a slow number and a fast one
+
+Final attempt:
+- Helper function created to calculate sum of squares of an integer
+- Slow pointer and fast pointer initialised to n
+- Boolean flag needed to make sure the return statement is reachable for while loop
+- Slow equals sum of squares and then fast equals sum of squares ahead of slow
+- Check if either are 1 first then set found = true then check slow equals fast (cycle detected)
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 77.87%)
+- Memory: 42.40 MB (Beats 66.06%)
