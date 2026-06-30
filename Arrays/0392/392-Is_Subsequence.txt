@@ -1,0 +1,8 @@
+Final attempt:
+- Used two pointer to scan t for each letter in s
+- Return false if end of t is reached before next character in s is found
+- If all characters found return true
+
+Stats (at time of submission):
+- Runtime: 0ms (100.00%)
+- Memory: 42.94 MB (Beats 25.93%)
