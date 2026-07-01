@@ -1,0 +1,8 @@
+Final attempt:
+- Used a fast and slow pointer, the fast pointer moves twice as fast as the slow one
+- This means when the fast pointer reaches the end of the list, the slow one is in the middle
+- Then after tracing realised that even if linked list has an odd number of items, the slow would be at the second middle node
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 42.92MB (Beats 35.21%)
