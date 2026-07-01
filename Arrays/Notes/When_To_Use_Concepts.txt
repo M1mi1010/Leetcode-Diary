@@ -2,3 +2,10 @@
 - Checking if linked list has a cycle
 - Detecting if a process repeats forever or will stop
 - Finding duplicates in a set of numbers with O(1) memory
+
+**Fixed Separation (Nth Node from End)**
+- Finding the middle of a list
+- Removing the Nth node from the end
+  --> Move fast pointer n stps infront of the slow one, move both and when fast gets to the end, slow is at the target
+- Deleting the middle node 
+  --> Will need to keep track of the previous item
