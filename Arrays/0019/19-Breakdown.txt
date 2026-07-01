@@ -1,0 +1,15 @@
+Overall summary of mistakes:
+- Overcomplicated problem by focusing too much on edge cases
+- Didn't set fast n steps ahead before the while loop
+- Used standard fast and slow while loop set up, but after tracing realised that the loop was always stopping one early
+
+Final attempt:
+- Set prev, slow and fast to head
+- Set fast n steps ahead of slow
+- Then while fast isn't null, update the previous to be the value of slow, and move fast and slow forward by one
+- Then set prev.next to slow.next to remove the nth value
+- Always return head
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.74 MB (Beats 6.64%)
