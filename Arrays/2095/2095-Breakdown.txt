@@ -1,0 +1,10 @@
+Final attempt:
+- Set slow, prev and fast to all be head 
+- Then standard slow fast while loop whilst keeping track of previous
+- Exception handling: one item, two items
+- Then remove item and return head
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 99.96%)
+- Memory: 202.53 MB (Beats 57.84%)
+- Time: 5m 10s
