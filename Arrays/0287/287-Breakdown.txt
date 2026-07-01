@@ -1,0 +1,14 @@
+First attempts:
+- Super hard, did some manual traces and quickly realised a standard fast and slow approach wouldnt work
+- Noticed the different types of cycles 
+
+Final attempt:
+- Used tonnes of hints
+- Had to look at each item pointing to the index of another item, replicating a linked list
+- And then fast == slow is when fast and slow are at some point in the cycle
+- Then you have to reset slow to 0 and step through until slow and fast meet again at the entry of the cycle
+- Then return the entry point
+
+Stats (at time of submission):
+- Runtime: 5ms (Beats 59.69%)
+- Memory: 83.00 MB (Beats 46.22%)
