@@ -9,3 +9,10 @@
   --> Move fast pointer n stps infront of the slow one, move both and when fast gets to the end, slow is at the target
 - Deleting the middle node 
   --> Will need to keep track of the previous item
+
+**String Comparison with Backspaces:**
+When simulating editing actions:
+- Comparing user input with typo corrections
+- Processing undo operations in text editors
+- Handling real-time chat corrections
+  --> You can use a stack, or use a pointer moving backwards through the string and skip characters that would have been skipped
