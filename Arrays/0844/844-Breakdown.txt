@@ -1,0 +1,18 @@
+First attempts:
+- Was only processing backspaces when characters didnt match but they needed to be processed before any comparisson
+- And then forgot that the backspace counter needs to reset each iteration
+- Also didnt realise that returning false when each pointer was negative was wrong because if both ends of the strings are reached, p1 and p2 should be -1
+- Had the wrong loop condition using && which meant my checks for the end values of p1 and p2 were never reached, so I changed it to ||
+- Also needed to move the pointers completely independently
+
+Final attempt:
+- Set both p1 and p2 to the end of the arrays and then had a while loop checking if they were >=0
+- Then two inner while loops, one for s and one for t. In each I check if the current character is # and then increase the skip counter and decrement the pointer. If the character isnt a skip then check if a skip needs to be done and perform it by decrementing the pointer.
+- Then check if both pointers are less than zero - meaning both ends of strings were reached
+- Then check if only one end was reached - return false
+- Then finally check if the characters are the same - if not return false
+- Then decrement the pointers
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.04 MB (Beats (51.56%)
