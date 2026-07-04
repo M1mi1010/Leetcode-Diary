@@ -1,0 +1,13 @@
+Final attempt:
+- Used a string builder because its more efficient than string concatenation
+- Then tracked number of skips and a pointer p, reading from right to left and skipping stars
+- If a star is found skip it, increment skip counter and decrement pointer
+- If a real character is found but the skip counter is greater than 0, skip the character by decrementing p and skip counter
+- Then the character must be a real character that shouldn't be skipped, append it to the string builder and decrement pointer
+- then reverse string builder and convert to string
+
+NOTE: I also tried alternatively inserting the character to index 0 because I thought reversing was time consuming, however when you insert to a position, all the otgher characters are shifted behind the scenes. This has runtime 367 vs 14ms for final submission
+
+Stats (at time of submission):
+- Runtime: 14 ms (Beats 96.02%)
+- Memory: 47.54 MVB (Beats 97.57%)
