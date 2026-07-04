@@ -7,6 +7,8 @@ Final attempt:
   - At this point p is a valid character that should not be skipped: increment the counter and decrement p
 - Return count
 
+NOTE: I had forgotten you need to use String.equals() to compare strings
+
 Stats (at time of submission):
 - Runtime: 1 ms (Beats 9.42%)
 - Memory: 43.68 MB (Beats 88.00%)
