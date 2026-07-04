@@ -1,0 +1,12 @@
+Final attempt:
+- Keep track of the number of steps, p as a pointer and the skips
+- While the pointer is >= 0 then check these cases:
+  - Is p on a skip character "./"
+  - Is p on a backspace: increment skips and decrement skips
+  - Then at this point p is a valid character, If skips > 0 then decement p and skips
+  - At this point p is a valid character that should not be skipped: increment the counter and decrement p
+- Return count
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 9.42%)
+- Memory: 43.68 MB (Beats 88.00%)
