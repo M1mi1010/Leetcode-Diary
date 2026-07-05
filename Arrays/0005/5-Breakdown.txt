@@ -1,0 +1,9 @@
+Final attempt:
+- Similar to 647 except I kept track of how long the current substring is and updated the longest one
+- Then sped up solution from 122 ms to 17 ms by keeping track of the indexes of the longest substring instead of constantly creating and recomputing a currString variable
+- Then return the substring from the parameter
+- Used the same approach of considerint every center possible and finding odd and even palindromes for each center
+
+Stats (at time of submission):
+- Runtime: 17 ms (Beats 50.40%)
+- Memory: 43.42 MB (Beats 79.73%)
