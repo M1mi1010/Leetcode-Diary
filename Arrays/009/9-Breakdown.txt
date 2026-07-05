@@ -1,0 +1,11 @@
+Non two pointer approach:
+- Use arithmetic to read the number backwards
+
+Two pointer approach:
+- Convert the number to a string
+- Read from both ends of the string and compare the digits
+
+Stats (at time of submission):
+- Time taken: 2 min 02 sec
+- Runtime: 6 ms (Beats 22.55%)
+- Memory: 45.96 MB (Beats 53.21%)
