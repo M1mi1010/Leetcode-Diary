@@ -1,0 +1,10 @@
+Final attempt:
+- Convert string to lower case
+- Originally had a replaceAll call with a regex but realised I could use the built in Character.isLetterOrDigit 
+- And then two pointers reading the string from either end:
+  - Then if the character is not a letter or digit increase p1/decrease p2
+  - Then compare the strings
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 60.60%)
+- Memory: 44.54 MB (Beats 51.54%)
