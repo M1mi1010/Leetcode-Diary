@@ -1,0 +1,12 @@
+Final attempt:
+- You have to look at each individual character in the string in turn, then see if an odd length palindrome or even length palindrome can be formed from that index being the center
+- Even:
+   - If the character to the right is the same then increase the count
+   - Decrement left and increment right
+- Odd:
+   - Increments count for the singular character since left and right start as equal
+   - Decrement left and increment right
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 60.55%)
+- Memory: 42.75 MB (Beats 80.95%)
