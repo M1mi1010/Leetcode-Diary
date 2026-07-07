@@ -8,6 +8,8 @@ Final attempt:
 - Then decrement pointers
 - Check carry value, return sb reversed as a string
 
+NOTE: had to do charAt - '0' to convert the read charAt from ascii number value to integer
+
 Stats (at time of submission):
 - Runtime: 2ms (Beats 48.10%)
 - Memory: 43.60 MB (Beats 54.01%)
