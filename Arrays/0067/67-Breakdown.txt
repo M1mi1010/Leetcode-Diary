@@ -1,0 +1,13 @@
+First attempts: 
+- Read the number and add it using if statements for combinations
+
+Final attempt:
+- Two pointers to read strings
+- Used a sum = bit1 + bit2 + carry bit and did sum % 2 and carry bit as sum / 2
+- Append modulus result to string builder
+- Then decrement pointers
+- Check carry value, return sb reversed as a string
+
+Stats (at time of submission):
+- Runtime: 2ms (Beats 48.10%)
+- Memory: 43.60 MB (Beats 54.01%)
