@@ -1,0 +1,15 @@
+Final attempt:
+- First simply check if the final digit is 9 and if not return the array with the last index value incremented
+- Else perform a while loop, reading through each item in the array.
+  - If the digit is 9 a carry flag is set to true and the value at that index set to 0. Decrememnt pointer
+  - If not, increment value at that index, set the carry flag to false and break
+- At the end of the loop check if the carry flag is still set for checking for inputs like [9,9,9]. If so copy the whole array into a new array with the starting index set to 1.
+
+NOTE: 
+- Had to use System.arrayCopy(original array, starting index to copy from of old array, new array to copy into, starting index for new array, nuber of items) for array copying
+- This is most efficient way to copy with an offset of 1
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 43.38 MB (Beats 61.28%)
+- Time: 14:07 ms
