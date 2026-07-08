@@ -2,56 +2,59 @@
 
 ## Fast & Slow Pointers (Floyd's Cycle Detection)
 
-### Common Uses
-- Detect if a linked list has a cycle.
-- Detect if a process repeats forever or eventually terminates.
-- Find duplicate numbers in an array with **O(1)** extra space (e.g. LeetCode 287).
+**When to use:** Linked list cycle detection, finding where a cycle starts, detecting if a process terminates or loops, finding duplicates in an array constrained to O(1) space.
 
 ### Key Idea
 - **Slow** pointer moves one step.
 - **Fast** pointer moves two steps.
 - If they meet, a cycle exists.
-- Reset one pointer to the start and move both one step at a time to find the cycle entrance.
+- Reset one pointer to start, move both one step at a time to find the cycle entrance.
 
 ---
 
 ## Fixed Separation (Two Pointers)
 
-### Common Uses
-- Find the middle of a linked list.
-- Remove the Nth node from the end.
-- Delete the middle node.
+**When to use:** Finding the middle of a linked list, removing the Nth node from the end, deleting the middle node — any problem where you need a pointer at a fixed offset from another.
 
 ### Key Idea
 Maintain a fixed distance between two pointers.
 
 #### Remove the Nth Node from the End
-1. Move the `fast` pointer `n` steps ahead.
+1. Move `fast` pointer `n` steps ahead.
 2. Move both pointers one step at a time.
 3. When `fast` reaches the end, `slow` is at the target node.
 
 #### Delete the Middle Node
 - Use slow/fast pointers to locate the middle.
-- Keep track of the previous node so you can remove the middle node.
+- Track the previous node so you can splice it out.
 
 ---
 
 ## String Comparison with Backspaces
 
-### Common Uses
-- Compare user input after typo corrections.
-- Simulate text editor backspaces.
-- Handle undo/backspace operations.
+**When to use:** Comparing strings after backspace characters are applied, simulating text editor input, any problem where characters can cancel preceding ones.
 
 ### Approaches
 
 #### Stack
 - Push normal characters.
-- Pop when encountering `#`.
+- Pop on `#`.
 
-#### Two Pointers (O(1) Space)
+#### Two Pointers — O(1) Space
 - Start from the end of both strings.
-- Maintain a counter for pending backspaces.
+- Maintain a skip counter for pending backspaces.
 - Skip characters that would have been deleted.
 - Compare the next valid characters.
-```
+
+---
+
+## Plus One
+
+**When to use:** Incrementing a number stored as a digit array, any problem simulating grade-school addition on an array where you can't convert to an integer (large numbers).
+
+### Key Idea
+Walk right to left. Increment the current digit. If it stays below 10, return immediately. If it becomes 10, set to 0 and carry. If carry exits the array, prepend a 1.
+
+### Complexity
+- Time: O(n)
+- Space: O(1) normally, O(n) for all-nines case
