@@ -1,0 +1,12 @@
+First attempt:
+- Programmatically do long division using integers
+
+Final attempt:
+- Used an array to keep track of intermediate values 
+- Iterate through each digit in num2 for each digit in num1
+- Multiply the digits in the positions and then add it to the results array which stores intermediate values and effectively does column addition and keeping track of carries
+- Then convert the results array to a string skipping over leading zeros
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 82.79%)
+- Memory: 43.73 MB (Beats 37.48%)
