@@ -1,0 +1,15 @@
+First attempt:
+- Originally did it using numbers but the constraints are really large so I had to use BigIntegers
+- The runtime for this approach was 248 ms (Beats 6.02%) and memory 47.47 MB (Beats 91.51%)
+
+Final attempt:
+- Using a pointer and read each value in the array, adding the current digit of k to it and the carry bit
+- If the sum of those three was greater than 0, the last digit of sum is added to the list, carry is divided by 10 to remove the digit ad p is decremented
+- Else just add the sum to the list and set the carry to 0, and decrement p
+
+- Then deal with any left over values of k and the leftover carry
+
+Stats (at time of submission);
+- Runtime: 3ms (Beats 74.28%)
+- Memory: 47.67 MB (Beats 66.30%)
+- Time: 20m 10s
