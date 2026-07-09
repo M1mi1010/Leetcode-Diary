@@ -1,0 +1,10 @@
+Final attempt:
+- Initialised two pointers to read the valid elements of the array
+- Used a third pointer to know where to write elements to in nums1 array which starts from the end of nums2
+- Compare the each element from nums2 to nums1, if nums2 element is larger than current nums1 element, write it in and decrement writing pointer
+- Handle the case where nums2 has extra elements
+- Exceptions: Handle the case where num1 is length 1 and num 2 is lenth 0
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 43.90 MB (Beats 28.61%)
