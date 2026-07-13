@@ -1,0 +1,14 @@
+First attempt:
+- Originally was trying to avoid shifting each item in the array because it would be time consuming
+- So I made a copy array and then used a calculation to move each element in the array from its original position to the correct pos in the new array
+- Then recopy from the new array to the original array
+- This had runtime 2 ms and memory 63.22 MB (12.32%)
+
+Final attempt:
+- Realised you could reverse the array three times to get result, using two pointer method
+- Reverse whole array, then first k elements then everything after the first k elements
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 19.74%)
+- Memory: 61.01 MB (Beats 84.87%)
+- Time taken: 6 min 25 sec
