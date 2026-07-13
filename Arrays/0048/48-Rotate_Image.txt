@@ -1,0 +1,13 @@
+First attempts:
+- Tried to see a pattern with the indices but couldn't find any that would be simple to translate into code
+- Then checked for flipping patterns, noticed that if you flip horizontally then along y=-x you get the correct result. However I had indexing issues
+
+Final attempt:
+- Realised I could just flip along y=x then flip along the horizontal to get result
+- Noted that you restrict j to half the number of columns/rows when flipping horizontally
+- Noted that you should skip any values on and below the diagonal when flipping y=x
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.11 MB (16.75%)
+- Time taken: 27m 48s
