@@ -1,0 +1,12 @@
+First attempt:
+- Genuinely overcomplicated it and didnt read that the transpose is just swapping tehe coolumns and rows, so I figured that out for myself
+- Also tried to do this by considering when the matrix is a square and not a square which overomplicated it, and didnt improve complexity (i.e. only swapping values above the diagonal - halving number of iterations)
+
+Final attempt:
+- Create new matrix
+- Just swapped the values for each row and indices
+- Returned new matrix
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 26.10%)
+- Memory: 46.62 MB (Beats 67.78%)
