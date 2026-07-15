@@ -136,3 +136,80 @@ for (int i = 0; i < n; i++)
 - Forgetting `k % n` for rotate array — k can exceed array length.
 - Swapping both triangles in transpose — elements return to original positions.
 - Confusing clockwise vs anti-clockwise — the order of transpose and reverse flips.
+
+
+## Spiral Traversal
+
+**When to use:** Traversing or filling a matrix in spiral order (outside in), generating
+spiral-ordered sequences, any problem where you need to visit every element in a clockwise
+inward path.
+
+---
+
+### Key Idea
+
+Define four boundaries — top, bottom, left, right — and shrink them inward as you complete
+each edge of the spiral. Traverse in four directions repeatedly until the boundaries cross.
+
+```
+→ → → →
+        ↓
+← ← ← ↓
+↑       ↓
+↑ → → ↑
+```
+
+Each full loop of the spiral processes one "ring" of the matrix, then the boundaries
+contract inward by one on all sides.
+
+---
+
+### The Four Boundaries
+
+- **Top** — the first unvisited row (moves down after traversing right)
+- **Bottom** — the last unvisited row (moves up after traversing left)
+- **Left** — the first unvisited column (moves right after traversing down)
+- **Right** — the last unvisited column (moves left after traversing up)
+
+After walking each edge, shrink that boundary inward before changing direction.
+
+---
+
+### Traversal Order (Clockwise)
+
+1. Left → Right along the top row, then top++
+2. Top → Bottom along the right column, then right--
+3. Right → Left along the bottom row, then bottom--
+4. Bottom → Top along the left column, then left++
+5. Repeat until top > bottom or left > right
+
+---
+
+### Why Shrink Boundaries?
+
+Once you've visited a row or column, you never want to revisit it. Shrinking the boundary
+after each pass is what prevents overlap and ensures every cell is visited exactly once.
+
+---
+
+### Spiral Fill vs Spiral Read
+
+These problems come in two flavours:
+
+**Read (Spiral Matrix I, III):** Given a filled matrix, extract elements in spiral order
+into a list.
+
+**Fill (Spiral Matrix II, IV):** Given an empty matrix (or a linked list), place values
+into positions in spiral order.
+
+The boundary-shrinking logic is identical — the only difference is whether you're reading
+from or writing to each cell.
+
+---
+
+### Edge Cases to Watch
+- Non-square matrices (m × n) — top/bottom track rows, left/right track columns independently.
+- Single row or single column — the spiral degenerates into a straight line; boundary checks
+  prevent double-traversal.
+- After shrinking, always check `top <= bottom` and `left <= right` before each directional
+  pass within the same loop
