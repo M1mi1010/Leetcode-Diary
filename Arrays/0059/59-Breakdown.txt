@@ -1,0 +1,9 @@
+Final attempt:
+- Same standard spiral traversal method
+- AKA using four walls and for loops to populate the matrix
+- Used an additional varaible to keep track of values to fill in next, starting from 1
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 43.04 MB (Beats 24.23%)
+- Time taken: 10m 38s
