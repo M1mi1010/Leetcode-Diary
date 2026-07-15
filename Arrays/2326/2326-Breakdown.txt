@@ -1,0 +1,18 @@
+First attempt:
+- Didn't actually execute it but was thinking of having a break when the end of the loop was reached and just filling the rest of the matrix with -1. Then I realised it made more sense to just check within the first while loop, as the former wouldn't make much difference to the time complexity
+
+Final attempt:
+- After doing 54, realised the problem would be easier with for loops
+- Used a while loop checking the validity of top, bottom, left and right 
+- Then within the while loop:
+  - For loop writing values to the right, then increment top boundary
+  - For loop writing values down, then decrement the right boundary
+  - Check the top boundary is valid (aka there are still rows left), then write values left and decrement bottom boundary
+  - Check the right boundary is still valid (columns still left), then write the values up and increment left boundary
+- In each for loop, check if head is null, if it is insert -1, else insert head.val and set head to the next item
+
+
+Stats (at time of submission):
+- Runtime: 6ms (Beats 93.69%)
+- Memory: 133.98 MB (Beats 76.91%)
+- Time taken: 24m 5s
