@@ -1,0 +1,15 @@
+First attempt:
+- Was originally still using top, bottom, left and right pointers to check if the index was valid, however the dimensions of the array are given so uou can just use that
+- Also didn't realise the stepLength pattern increasing incrementally
+
+Final attempt:
+- Had a variable counter to know which index to write the new valid coordinate to in the array returned
+- Had a variable keeping track of the step length, which increments after each pair of operations (right down, increment, left up, increment..)
+- Then change the cStart/rStart value and then check if you're at a valid index. If you are add the coordinate to the array
+- Else continue to the next direction
+- The whole thing is in a while loop checking count against the expected number of items (rows * cols)
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 97.69%)
+- Memory: 47.49 MB (Beats 21.73%)
+- Time taken: 49m 36s
