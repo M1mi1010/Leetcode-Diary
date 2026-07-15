@@ -1,0 +1,17 @@
+Final attempt:
+- 4 pointers to represent the 4 maximum boundaries I could hit
+- 2 additional pointers tracking position
+- A while loop checking when I can no longer go left/right or up/down
+- Within the while loop, 4 loops moving right, then down, left and finally up.
+- As you move right, increment sideways pointer until righrt wall is hit. Then increment the pointer regarding the max height wall
+- Repeat for all directions
+- After each direction you have to check if maxUp is greater than maxDown or maxLeft is greater than maxRight so you know to stop traversing
+
+NOTE:
+  - Needed to have the additional pointers for height and sideways because I used while loops, could've used the walls as pointers using for loops
+
+Stats (at time of submission):
+- Runtime: 0ms (Beats 100.00%)
+- Memory: 43.04 MB (Beats 43.18%)
+- Time taken: 40m 15s
+  
