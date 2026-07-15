@@ -1,0 +1,11 @@
+First attempt:
+- Originally used a list of lists to store the coordinates but this was inefficient
+
+Final attempt:
+- Create two boolean arrays for rows and columns and set the index of row and column to true if a 0 is found when traversing array
+- Then traverse the array again to set the index to 0 if the row or column is true 
+
+Stats (at time of submission):
+- Runtime: 1ms (Beats 98.63%)
+- Memory: 47.76 MB (Beats 25.62%)
+- Time taken (including optimising): 15m 4s
