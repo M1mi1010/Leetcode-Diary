@@ -213,3 +213,37 @@ from or writing to each cell.
   prevent double-traversal.
 - After shrinking, always check `top <= bottom` and `left <= right` before each directional
   pass within the same loop
+
+## Matrix In-Place State Tracking
+
+**When to use:** Modifying a matrix based on its current state where changes must not affect
+the reading of other cells, propagating a condition across rows/columns, traversing a matrix
+in a non-standard order (diagonal, spiral).
+
+---
+
+### Key Idea
+
+The core challenge in these problems is that naively modifying cells as you read them
+corrupts the information you still need. You need a way to record what changes are needed
+first, then apply them in a second pass — ideally without extra space.
+
+---
+
+### Set Matrix Zeroes
+
+**Problem:** If a cell is 0, set its entire row and column to 0.
+
+**Naive approach:** Use two extra arrays (or a set) to record which rows and columns contain
+a zero, then zero them out in a second pass. O(m + n) space.
+
+**Optimal approach:** Use the matrix itself as storage. The first row and first column can
+act as markers — if a cell should be zeroed, mark its row header and column header in row 0
+and column 0. Then use those markers to zero out the rest. Handle the first row and column
+separately since they're being used as markers.
+
+**The two-pass principle:**
+1. Scan the matrix, recording which rows and columns need zeroing using markers.
+2. Apply the zeroing based on those markers.
+
+Never zero cells during the scan —
