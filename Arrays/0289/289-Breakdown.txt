@@ -1,0 +1,20 @@
+First attempt:
+- This was super difficult, was originally going to keep two arrays storing the result of the array changes that needed to be made
+- Also made so many mistakes with coordinates
+- Fell into the trap of updating the board whilst reading because of the use fo the word simultaneously in the question brief
+
+
+Final attempt
+- Used another matrix same size as the board to store the new values which then are copied into the board after the whole board is read
+- Then for each coordinate in the array I check all 8 surrounding positions and keep count of the number of live cells
+- Then review the number of live cells and apply rules to determine if updating the position is necessary
+- Then set all the new positions
+
+Optimisation - NOTE doesnt change runtime:
+- Instead of using manual checks for directions, use an array that stored the row and column changes in arrays of length 2
+- Then use the values stored in the array as the shift that needs to be added to current i,j position
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.18 MB (Beats 64.80%)
+- Time taken: 52m 39s)
