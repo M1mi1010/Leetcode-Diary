@@ -247,3 +247,105 @@ separately since they're being used as markers.
 2. Apply the zeroing based on those markers.
 
 Never zero cells during the scan —
+
+## Prefix & Suffix Products
+
+**When to use:** Computing a value for each element based on all other elements, problems
+where you need to "look left and right" from every position simultaneously, any problem
+where a brute force would recompute overlapping ranges repeatedly.
+
+---
+
+### Key Idea
+
+Instead of recomputing the product of all other elements for each index (O(n²)), precompute
+running products from the left and right separately, then combine them.
+
+For any index `i`, the product of everything except `i` is:
+> (product of everything to the left of i) × (product of everything to the right of i)
+
+---
+
+### Product of Array Except Self
+
+**Naive approach:** For each element, loop through the entire array multiplying everything
+else. O(n²) time.
+
+**Optimal approach:** Two-pass prefix/suffix technique.
+
+**Pass 1 — Left products:** Build an array where each position holds the product of all
+elements to its left. The leftmost element has no left neighbours so its value is 1.
+
+**Pass 2 — Right products:** Traverse right to left, maintaining a running product of
+everything to the right. Multiply this into the left-product array at each position.
+
+The result array at each index ends up holding left product × right product — exactly
+the product of all other elements.
+
+**Why no division?** The obvious shortcut is total product ÷ current element, but this
+breaks when zeros are present (division by zero). The prefix/suffix approach handles zeros
+naturally.
+
+---
+
+### The Prefix/Suffix Pattern
+
+This same idea generalises beyond products:
+
+| Problem type | Left pass | Right pass |
+|---|---|---|
+| Product except self | Running product | Running product |
+| Sum except self | Running sum | Running sum |
+| Max to the left/right | Running max | Running max |
+
+Any time a problem asks "for each element, compute something about all other elements",
+think about whether a left pass and a right pass can each capture half the information,
+then be combined.
+
+---
+
+### Longest Mountain in Array
+
+**Problem:** Find the longest subarray that strictly increases then strictly decreases
+(a "mountain" shape). Must have at least one element on each side of the peak.
+
+**Key Insight:** This is also a prefix/suffix problem in disguise.
+
+**Pass 1 — Left slopes:** For each index, compute how long the strictly increasing run
+is coming from the left. Flat or decreasing resets this to 0.
+
+**Pass 2 — Right slopes:** For each index, compute how long the strictly decreasing run
+is coming from the right.
+
+**Combine:** A valid mountain peak at index `i` requires both left[i] > 0 and right[i] > 0.
+The mountain length is left[i] + right[i] + 1. Take the maximum across all valid peaks.
+
+---
+
+### Common Thread
+
+Both problems avoid O(n²) by splitting "look at everything else" into two cheaper passes:
+
+| Problem | What left pass captures | What right pass captures |
+|---------|------------------------|--------------------------|
+| Product except self | Product of left neighbours | Product of right neighbours |
+| Longest mountain | Length of ascending run from left | Length of descending run from right |
+
+---
+
+### Edge Cases to Watch
+- Product except self: zeros in the array — the prefix/suffix approach handles these
+  correctly where division would not.
+- Product except self: multiple zeros — every result will be 0 except potentially none.
+- Longest mountain: a strictly flat section resets both slope counters — equal adjacent
+  elements are neither ascending nor descending.
+- Longest mountain: a valid mountain needs at least one step up and one step down — peaks
+  at the edges of the array can never form a valid mountain.
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Product except self (with output array) | O(n) | O(1) extra |
+| Longest mountain | O(n) | O(n) for slope arrays, O(1) if computed on the fly |
