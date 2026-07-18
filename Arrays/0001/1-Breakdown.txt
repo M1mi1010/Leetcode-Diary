@@ -1,0 +1,12 @@
+First attempt:
+- Brute force (before learning about two pointer and using a hash map)
+
+Final attempt:
+- Used a hashmap which stores each number as a key and its index as the value
+- And then check if the numbers complement is in the map already, if it is return the index it stores
+- Else add the value and its index to the map
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 99.30%)
+- Memory: 47.12 MB (Beats 40.23%)
+- Time taken: 10m 23s
