@@ -1,0 +1,14 @@
+First attempt:
+- Used two HashMaps to store the occurences of each value
+- Then made it one HashMap and checked if the values were 0
+- Then made it one HashMap and checked within the same loop, rather than checking string t, then checking the values in another loop
+
+Final attempt:
+- Used an array of int[26] because its stated that s and t consist of lowercase English letters
+- So store the counts in an array by subtracting 'a' from each character 
+- Then decrement the count at the index for a character found, checking if the count is valid after
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 82.16%)
+- Memory: 44.04 MB (Beats 95.26%)
+- Time taken (for final attempt): 14m 8s
