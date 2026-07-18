@@ -1,0 +1,10 @@
+Final attempt:
+- Used two pointers i, j for the index of the matrix to read
+- Created an array for result and also an index counter to store the next item in
+- Until the array is full, use a while loop to go diagnonally upwards and then diagonally downwards, updating i and j
+- Check for if you've gone past the matrix boundaries after each traversal in one direction and reset i and j to be valid for next direction
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 71.5%)
+- Memory: 47.96 MB (Beats 80.69%)
+- Time taken: 31m 38s
