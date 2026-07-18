@@ -1,0 +1,14 @@
+First attempt:
+- Didn't read that you can't use the division operator
+
+Final attempt:
+- Used two arrays to store everything to the left of an index, and everything to the right
+- Then update the original array by overwriting each index with left * right at that position
+
+Optimisation - memory only:
+- Used O(1) by adding an integer lastRight and lastNum (being overwritten) so that this is used instead of two arrays
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 93.94%)
+- Memory: 71.04 MB (63.85%)
+- Time taken: 7m 58s
