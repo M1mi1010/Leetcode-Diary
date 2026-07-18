@@ -248,104 +248,72 @@ separately since they're being used as markers.
 
 Never zero cells during the scan —
 
-## Prefix & Suffix Products
+## Product of Array Except Self
 
-**When to use:** Computing a value for each element based on all other elements, problems
-where you need to "look left and right" from every position simultaneously, any problem
-where a brute force would recompute overlapping ranges repeatedly.
-
----
-
-### Key Idea
-
-Instead of recomputing the product of all other elements for each index (O(n²)), precompute
-running products from the left and right separately, then combine them.
-
-For any index `i`, the product of everything except `i` is:
-> (product of everything to the left of i) × (product of everything to the right of i)
+**When to use:** Computing a value for each element based on all other elements without
+division, problems where brute force would recompute overlapping ranges repeatedly.
 
 ---
 
-### Product of Array Except Self
+### The Problem
 
-**Naive approach:** For each element, loop through the entire array multiplying everything
-else. O(n²) time.
-
-**Optimal approach:** Two-pass prefix/suffix technique.
-
-**Pass 1 — Left products:** Build an array where each position holds the product of all
-elements to its left. The leftmost element has no left neighbours so its value is 1.
-
-**Pass 2 — Right products:** Traverse right to left, maintaining a running product of
-everything to the right. Multiply this into the left-product array at each position.
-
-The result array at each index ends up holding left product × right product — exactly
-the product of all other elements.
-
-**Why no division?** The obvious shortcut is total product ÷ current element, but this
-breaks when zeros are present (division by zero). The prefix/suffix approach handles zeros
-naturally.
+For each index `i` in an array, find the product of every element except the one at `i`.
+The constraint that makes it interesting — no division allowed, and must be O(n).
 
 ---
 
-### The Prefix/Suffix Pattern
+### Why Not Division?
 
-This same idea generalises beyond products:
-
-| Problem type | Left pass | Right pass |
-|---|---|---|
-| Product except self | Running product | Running product |
-| Sum except self | Running sum | Running sum |
-| Max to the left/right | Running max | Running max |
-
-Any time a problem asks "for each element, compute something about all other elements",
-think about whether a left pass and a right pass can each capture half the information,
-then be combined.
+The obvious approach is total product ÷ current element, but this breaks the moment
+a zero appears in the array. The prefix/suffix approach handles zeros naturally.
 
 ---
 
-### Longest Mountain in Array
+### Core Concept: Prefix & Suffix Products
 
-**Problem:** Find the longest subarray that strictly increases then strictly decreases
-(a "mountain" shape). Must have at least one element on each side of the peak.
+For any index `i`, the product of everything except `i` is just:
 
-**Key Insight:** This is also a prefix/suffix problem in disguise.
+> **everything to its left** × **everything to its right**
 
-**Pass 1 — Left slopes:** For each index, compute how long the strictly increasing run
-is coming from the left. Flat or decreasing resets this to 0.
+So instead of recomputing from scratch for every index (O(n²)), you precompute both
+sides separately and combine them.
 
-**Pass 2 — Right slopes:** For each index, compute how long the strictly decreasing run
-is coming from the right.
+**Left product at i** — the running product of all elements before index i.
+The leftmost element has nothing to its left, so it starts as 1.
 
-**Combine:** A valid mountain peak at index `i` requires both left[i] > 0 and right[i] > 0.
-The mountain length is left[i] + right[i] + 1. Take the maximum across all valid peaks.
+**Right product at i** — the running product of all elements after index i.
+The rightmost element has nothing to its right, so it starts as 1.
+
+```
+array:         [2,  3,  4,  5]
+
+left products: [1,  2,  6,  24]   (product of everything to the left)
+right products:[60, 20, 5,  1]    (product of everything to the right)
+
+result:        [60, 40, 30, 24]   (left × right at each index)
+```
 
 ---
 
-### Common Thread
+### The Two-Pass Principle
 
-Both problems avoid O(n²) by splitting "look at everything else" into two cheaper passes:
+1. Traverse left to right, building up the left products.
+2. Traverse right to left, building up the right products and combining as you go.
 
-| Problem | What left pass captures | What right pass captures |
-|---------|------------------------|--------------------------|
-| Product except self | Product of left neighbours | Product of right neighbours |
-| Longest mountain | Length of ascending run from left | Length of descending run from right |
+These two passes together give every element full knowledge of its neighbours on
+both sides — in O(n) time and O(1) extra space if you reuse the output array.
+
+---
+
+### Why This Works
+
+Each element is included in every other index's product exactly once — either as part
+of a left product or a right product. No element contributes to its own result.
 
 ---
 
 ### Edge Cases to Watch
-- Product except self: zeros in the array — the prefix/suffix approach handles these
-  correctly where division would not.
-- Product except self: multiple zeros — every result will be 0 except potentially none.
-- Longest mountain: a strictly flat section resets both slope counters — equal adjacent
-  elements are neither ascending nor descending.
-- Longest mountain: a valid mountain needs at least one step up and one step down — peaks
-  at the edges of the array can never form a valid mountain.
-
----
-
-### Complexity
-| | Time | Space |
-|--|------|-------|
-| Product except self (with output array) | O(n) | O(1) extra |
-| Longest mountain | O(n) | O(n) for slope arrays, O(1) if computed on the fly |
+- **Single zero:** Only the index of the zero gets a non-zero result (the product of
+  everything else). All other indices multiply in the zero and get 0.
+- **Multiple zeros:** Every index gets 0, since every product includes at least one zero.
+- **Negative numbers:** No special handling needed — products carry sign automatically.
