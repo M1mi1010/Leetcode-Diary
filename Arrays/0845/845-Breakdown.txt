@@ -1,0 +1,18 @@
+First successful attempt:
+- Used a two pointer method where the two pointers expand from the current index whilst a mountain is there
+- Then update a counter for the longest moutain found
+- Used interval skipping to check for mountains
+
+- Runtime: 3ms (Beats 68.40%)
+- Memory: 47.51 MB (Beats 18.88%)
+- Time taken: 19m 56s
+
+Final attempt:
+- Used product except self theory
+- Two additional arrays keeping track of the amount of ups in a row and downs in a row
+- Then updated the longest mountain variable by combining the two arrays
+
+Stats (at time of submission):
+- Runtime: 3ms (Beats 68.40%)
+- Memory: 47.51 MB (Beats 89.87%)
+- Time taken: 25m 55s
