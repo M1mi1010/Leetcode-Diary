@@ -1,0 +1,19 @@
+First attempt:
+- Knew I had to create a frequency map of all the counts of the numbers
+- Then knew I had to check the values to see which had the highest counts but didn't know how to
+
+Final attmept:
+- Used a priority queue with a comparator that checks two arrays index 1 values. The priority queue stores integer arrays, where arr[0] is the number and arr[1] is the frequency
+- Then using the frequency maps entry set, add the entries key and value as a new array to the priority queue
+- Then if the size of the heap after adding is more than k, remove the item
+- Then pop everything off the queue, writing each arrays index 0 to results until k elements are found
+
+Why cant I break when heap is size k?
+- heap.size() < k → accept candidates
+- heap.size() == k → still keep checking, because a better candidate may arrive
+- heap.size() > k → remove the weakest candidate
+
+Stats (at time of submission):
+- Runtime: 13 ms (Beats 80.00%)
+- Memory: 47.52 MB (Beats 66.48%)
+- Time taken: 29m 14s
