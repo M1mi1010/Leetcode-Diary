@@ -1,0 +1,27 @@
+First attempt:
+- Tried using the ascii values of each character and storing a map from the ascii count of the word to the words with the value
+
+First successful attempt:
+- Used a hash map, for each string to a list of strings 
+- For each string in the array of string, store a number in an array of the alphabet representing the count of the letters occurences
+- Convert the array of letter occurences to a string and use it as a key, mapping to an empty array list
+- Then add the string to the map
+- Return map.values() as an arraylist
+
+- Runtime: 18 ms (Beats 21.74%)
+- Memory: 51.08 MB (Beats 6.49%)
+- Time taken: 17m 44s
+
+Final successful attempt:
+- Used the same map
+- Convert each string to an array of characters, then sort the characters into alphabetical order and use the string version as a key
+- Then check if the map contains the key, if not put the key with an empty array list
+- Then get the arraylist for the current key and add the current string to it
+- Then return an array list of map.values()
+
+- NOTE: made a mistake using (char[]).toString but needed to use String.valueOf()
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 99.53%)
+- Memory: 49.20 MB (Beats 97.82%)
+- Time taken: 3m 24s
