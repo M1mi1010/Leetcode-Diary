@@ -1,0 +1,10 @@
+Final attempt:
+- Created a frequency map counting how many times ecah character appears
+- Then created a priority queue of int[integer char, frequency], and filled it with each entry in the frequency map
+- Then used a string builder to poll values from the priority queue until its empty, ensuring to add ech character to the string builder the number of times it appeared in the original string
+- Then convert string builder to string
+
+Stats (at time of submission):
+- Runtime: 12 ms (Beats 86.43%)
+- Memory: 46.44 MB (Beats 78.31%)
+- Time taken: 22m 30s
