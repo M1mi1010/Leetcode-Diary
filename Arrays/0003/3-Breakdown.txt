@@ -1,0 +1,14 @@
+First attempt:
+- Originally had one pointer and a max counter and a hashset
+- Then traverse through each character in the string, adding them to the set if it doesnt already contain it, when a duplicate is found, update the max counter, clear the set and add the character that was a duplicate
+
+Final attempt:
+- Used a two pointer sliding window technique
+- 2 pointers, one set
+- Whilst the set contains the current character, remove the character at p1 from the set (handling duplicates)
+- When a duplicate isn't found, add it to the set, update max and increment pointer
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 70.42%)
+- Memory: 46.49 MB (Beats 38.70%)
+- Time taken: 21m 28s
