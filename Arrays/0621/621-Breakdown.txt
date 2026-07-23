@@ -1,0 +1,28 @@
+First attempt:
+- I was aware I needed to count the frequencies of each character 
+- Needed a priority queue organising the letters by frequency
+- Then I had figured I could use the number n and keep track of how long it's been since a letter was last seen 
+
+First successful attempt:
+- Count the frequencies of each letter and put it into a hashmap
+- Keep a list of all the blocked letters 
+- Keep a priority queue containing integer arrays (where index 0 is the letters ascii value and 1 is the frequency) with all the entries from the frequency map inside
+-Then keep another map of each letter to when its next available
+- Keep an integer clock, and completed (storing the number of letters that have been processed
+- Increment the clock every tick, Move unavailable tasks to the blocked list, If there's a task that is available, run it by decrememnting its frequency and storing its new next available time.. If theres still more times the letter needs to be ran, add it back
+- And then put all the blocked tasks back
+- Return the clock because that stores how many ticks it took for the string to be processed
+
+Stats (at time of submission):
+- Runtime: 654 ms (Beats 5.02%)
+- Memory: 48.75 MB (Beats 5.82%)
+- Time taken: 42m 4s
+
+Final attempt:
+- Used a priority queue for the items in a cooldown
+- Cooldown {task letter, frequency, next available}
+
+Stats (at time of submission):
+- Runtime: 41 ms (Beats 11.24%)
+- Memory: 48.47 MB (Beats 22.13%)
+- Time taken: 52m 5s
