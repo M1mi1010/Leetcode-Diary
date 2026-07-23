@@ -317,3 +317,75 @@ of a left product or a right product. No element contributes to its own result.
   everything else). All other indices multiply in the zero and get 0.
 - **Multiple zeros:** Every index gets 0, since every product includes at least one zero.
 - **Negative numbers:** No special handling needed — products carry sign automatically.
+
+## Hashing — Seen Check
+
+**When to use:** Detecting if something has been encountered before, finding duplicates,
+checking membership, detecting cycles. Look for "have I seen this?", "does this repeat?",
+or "is this already in the collection?".
+
+---
+
+### Key Idea
+
+Instead of scanning backwards through the array each time (O(n) per check), store every
+element you've visited in a hash set. Membership checks then become O(1) — you just ask
+"is this in the set?" before adding it.
+
+---
+
+### Core Variations
+
+**Duplicate detection:** Add elements one by one. Before adding, check if it's already
+in the set. If yes, you've found a duplicate.
+
+**Cycle detection:** In a sequence where each value points to the next (like a linked list
+or a number transformation), store every visited state. If you reach a state you've seen
+before, a cycle exists.
+
+**Intersection / membership:** Build a set from one collection, then check each element
+of the second collection against it. Avoids nested loops.
+
+**Sliding window seen check:** Track what's currently inside a window. When the window
+slides, remove the element that left and add the one that entered.
+
+---
+
+### Set vs Map
+
+| Use a Set when... | Use a Map when... |
+|---|---|
+| You only need to know if something was seen | You need to know when or where it was seen |
+| Intersection, cycle detection, basic duplicates | "Within k distance", index-based constraints |
+
+Example: Contains Duplicate II needs to know the **index** of the previous occurrence,
+so a map (element → last seen index) is needed over a plain set.
+
+---
+
+### The Sliding Window Extension
+
+Some seen-check problems add a constraint like "within k indices" or "within a window
+of size k". The set then represents only the current window — add incoming elements,
+remove outgoing ones as the window slides.
+
+---
+
+### Edge Cases to Watch
+- Negative numbers and zeros are valid keys — sets and maps handle them fine.
+- The same element appearing more than twice — a seen check catches it on the second
+  occurrence regardless of how many times it appears after.
+- Cycle detection via hashing is O(n) space — if the problem requires O(1) space,
+  think fast/slow pointers instead (Floyd's algorithm).
+- Linked list cycles — you're storing node references, not values, since two different
+  nodes could hold the same value.
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Seen check (set) | O(1) per lookup | O(n) |
+| Sliding window seen check | O(1) amortised per element | O(k) window size |
+| Cycle detection via hashing | O(n) | O(n) |
+| Cycle detection via fast/slow | O(n) | O(1) |
