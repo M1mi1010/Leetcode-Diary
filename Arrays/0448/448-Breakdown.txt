@@ -12,4 +12,14 @@ Stats (at time of submission):
 - Runtime: 4 ms (Beats 96.57%)
 - Memory: 70.19 MB (Beats 40.19%)
 
+Alternative approach: Instead of using extra space, cyclic sort
+- At each index, there is a value, negate the item at index value - 1
+- If a cell is already negated, skip it
+- Then do another pass of the array to find the indexes that are positive, +1 and add to list
+
+Stats (at time of submission):
+- Runtime: 7 ms (Beats 49.93%)
+- Memory: 67.08 MB (Beats 74.24%)
+- Time taken: 5m 45s
+
 NOTE: Java arrays are zero initialised
