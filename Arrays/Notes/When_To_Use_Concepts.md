@@ -17,6 +17,7 @@
 | 9 | [Hashing — Frequency Map / Counting](#hashing--frequency-map--counting) | Group Anagrams, Top K Frequent |
 | 10 | [Hashing — Seen Check](#hashing--seen-check) | Happy Number, Contains Duplicate II |
 | 11 | [Prefix Sum](#prefix-sum) | Product of Array Except Self. Frequency of the Most Frequeny Element |
+| 12 | [Cyclic Sort](#cyclic-sort) | Missing Number, Find All Duplicates, First Missing Positive |
 
 ## Fast & Slow Pointers (Floyd's Cycle Detection)
 
@@ -460,3 +461,69 @@ inclusion-exclusion across four corners.
 - Products with zeros — division-based range products break when zeros are present;
   track zero counts separately.
 - Single element queries — the formula still works,
+
+
+## Cyclic Sort
+
+**When to use:** Arrays containing numbers in a range (typically 1 to n or 0 to n), finding
+missing numbers, finding duplicates, first missing positive — any problem where the value
+of each element tells you where it should live in the array.
+
+---
+
+### Key Idea
+
+If an array contains numbers in the range 1 to n, each number has a "correct" index —
+the number `x` belongs at index `x-1`. Cyclic sort exploits this by placing each element
+at its correct position in a single pass, then a second pass identifies which positions
+are wrong.
+
+> The value tells you the index. If it's not there, something is missing or duplicated.
+
+---
+
+### The Sort
+
+Walk through the array. At each position, check if the current element is at its correct
+index. If not, swap it to where it belongs. Repeat until the current element is correct,
+then move to the next position.
+
+```
+[3, 1, 4, 2]
+
+i=0: 3 belongs at index 2 → swap → [4, 1, 3, 2]
+i=0: 4 belongs at index 3 → swap → [2, 1, 3, 4]
+i=0: 2 belongs at index 1 → swap → [1, 2, 3, 4]
+i=0: 1 is correct → move on
+i=1,2,3: all correct
+```
+
+---
+
+### After Sorting — Reading the Answer
+
+Once sorted, a second pass reveals the answer:
+
+**Missing number:** The index where `nums[i] != i+1` is the missing value.
+
+**Duplicate:** The index where `nums[i] != i+1` holds the duplicate (the value that took
+its place).
+
+**First missing positive:** After placing all valid numbers (1 to n), the first index
+where `nums[i] != i+1` gives the answer.
+
+---
+
+### Range Variants
+
+| Array range | Correct index for value x |
+|---|---|
+| 1 to n | x - 1 |
+| 0 to n | x |
+
+Always check the range the problem gives you — off by one here breaks everything.
+
+---
+
+### Edge Cases to Watch
+- Duplicates during the sort — when swapping, if the element already at the target
