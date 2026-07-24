@@ -1,0 +1,11 @@
+Final attempt:
+- Iterate through each item in the array
+- If it's less than 1 or greater than nums.length, skip it
+- Swap an element found into the correct position continuously
+- Then read through the whole array and if the index + 1 doesn't match the value then return the index + 1
+- If no return statement has been reached, the array is valid and next positive is nums.length + 1
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 99.98%)
+- Memory: 71.27 MB (Beats 60.16%)
+- Time taken: 25m 47s
