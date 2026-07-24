@@ -1,0 +1,14 @@
+First attempts:
+- Struggled to get the idea of the sliding window concept into code
+
+Final attempt:
+- Used two pointers, a number of zeros counter and a max window value
+- Every iteration, the window gets larger as p2 increases
+- If the current number p2 points to is a 0, the number of zeros increases
+- Then check if the noZeros exceeds k, if it does increase p1 to make the window smaller until a zero is found and noZeros is back to k
+- Update the current valid window found (update max)
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 96.10%)
+- Memory: 52.44 MB (Beats 6.36%)
+- Time taken: 39m 25s
