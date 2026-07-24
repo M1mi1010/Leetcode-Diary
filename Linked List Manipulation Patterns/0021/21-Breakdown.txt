@@ -1,0 +1,14 @@
+Intial attempt:
+- Tried to set up the first item of the list outside the while loop
+
+Final attempt:
+- Initialised the head and then a current listnode which points to the head, because each iteration I set current.next, this is essentially setting head.next in the first iteration
+- First checks for if both, or either of the lists are null
+- While list values are ot equal to null, compare the heads of each list node and then add the node with the lesser value to current.next, update the relevant node to its next value and set current to current.next
+- Then check if either of the lists are null and if they are, add the rest of the other list to it (current.next = other list)
+- Return head.next (which points to the first current)
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.13 MB (Beats 75.55%)
+- Time taken: 16m 14s
