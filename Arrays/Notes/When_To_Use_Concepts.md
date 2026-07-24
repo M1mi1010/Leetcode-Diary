@@ -1,5 +1,22 @@
 # LeetCode Patterns
 
+# LeetCode Patterns
+
+## Table of Contents
+
+| # | Pattern | Key Problems |
+|---|---------|--------------|
+| 1 | [Fast & Slow Pointers](#fast--slow-pointers-floyds-cycle-detection) | Linked List Cycle, Find Duplicate |
+| 2 | [Fixed Separation (Two Pointers)](#fixed-separation-two-pointers) | Remove Nth From End, Middle of List |
+| 3 | [String Comparison with Backspaces](#string-comparison-with-backspaces) | Backspace String Compare |
+| 4 | [Plus One](#plus-one) | Plus One, Add Binary |
+| 5 | [In-place Rotation](#in-place-rotation) | Rotate Image, Rotate Array, Transpose Matrix |
+| 6 | [Spiral Traversal](#spiral-traversal) | Spiral Matrix I-IV |
+| 7 | [Matrix In-Place State Tracking](#matrix-in-place-state-tracking) | Set Matrix Zeroes, Game of Life |
+| 8 | [Product of Array Except Self](#product-of-array-except-self) | Product Except Self, Longest Mountain |
+| 9 | [Hashing — Frequency Map / Counting](#hashing--frequency-map--counting) | Group Anagrams, Top K Frequent |
+| 10 | [Hashing — Seen Check](#hashing--seen-check) | Happy Number, Contains Duplicate II |
+
 ## Fast & Slow Pointers (Floyd's Cycle Detection)
 
 **When to use:** Linked list cycle detection, finding where a cycle starts, detecting if a process terminates or loops, finding duplicates in an array constrained to O(1) space.
@@ -389,3 +406,56 @@ remove outgoing ones as the window slides.
 | Sliding window seen check | O(1) amortised per element | O(k) window size |
 | Cycle detection via hashing | O(n) | O(n) |
 | Cycle detection via fast/slow | O(n) | O(1) |
+
+## Prefix Sum
+
+**When to use:** Multiple range sum queries on the same array, problems where brute force
+repeatedly sums overlapping sections, sliding window aggregates, splitting arrays into
+balanced partitions.
+
+---
+
+### Key Idea
+
+Precompute a running total so any range sum can be answered in O(1) by subtraction —
+like reading two odometer values and subtracting to find distance traveled.
+
+For any range `[i, j]`:
+> `range sum = prefix[j+1] - prefix[i]`
+
+---
+
+### Building the Prefix Array
+
+The prefix array is one element longer than the input, with `prefix[0] = 0`. Each position
+holds the sum of all elements up to that point:
+
+```
+nums:   [2,  4,  6,  8]
+prefix: [0,  2,  6,  12, 20]
+```
+
+Then `sum(1, 3)` = `prefix[4] - prefix[1]` = `20 - 2` = `18`.
+
+---
+
+### Why the Extra Zero?
+
+Starting with `prefix[0] = 0` eliminates the edge case of querying from index 0 — no
+special handling needed, the formula works uniformly for all ranges.
+
+---
+
+### 2D Prefix Sum
+
+The same idea extends to matrices for submatrix sum queries. Each cell stores the sum
+of the entire rectangle from `(0,0)` to `(i,j)`. A submatrix sum is then computed using
+inclusion-exclusion across four corners.
+
+---
+
+### Edge Cases to Watch
+- Off-by-one errors — the most common bug. `prefix[j+1] - prefix[i]` for 0-indexed input.
+- Products with zeros — division-based range products break when zeros are present;
+  track zero counts separately.
+- Single element queries — the formula still works,
