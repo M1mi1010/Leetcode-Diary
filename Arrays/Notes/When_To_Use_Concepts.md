@@ -16,7 +16,7 @@
 | 8 | [Product of Array Except Self](#product-of-array-except-self) | Product Except Self, Longest Mountain |
 | 9 | [Hashing — Frequency Map / Counting](#hashing--frequency-map--counting) | Group Anagrams, Top K Frequent |
 | 10 | [Hashing — Seen Check](#hashing--seen-check) | Happy Number, Contains Duplicate II |
-| 11 | [Prefix Sum](#prefix--sum) | Product of Array Except Self. Frequency of the Most Frequeny Element |
+| 11 | [Prefix Sum](#prefix-sum) | Product of Array Except Self. Frequency of the Most Frequeny Element |
 
 ## Fast & Slow Pointers (Floyd's Cycle Detection)
 
