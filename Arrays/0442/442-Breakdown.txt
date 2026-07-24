@@ -1,0 +1,11 @@
+Final attempt:
+- Used a cyclic sort method
+- Similar to 287, instead of returning immediately, add to a list
+- Get the value at the index of i from the array
+- If value is less than 0 then this is the second occurence of the number and add it to the list
+- Else negate the number stored at index value - 1
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 90.20%)
+- Memory: 57.50 MB (Beats 83.29%)
+- Time taken: 4m 32s
