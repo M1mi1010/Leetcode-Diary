@@ -1,0 +1,17 @@
+First attempts:
+- Originally accidentally mixed a two pointer and sliding window technique
+- Had a new array which had the running total of the array, then two pointers 
+
+Final attempt:
+- Two pointers, a minLength variable, and a running total array
+- Pointer 2 looks at each value in the array and ompare it to the target
+- After new values added to meet target, update lminLength and then increase p1
+
+Final Optimised Attempt:
+- Two pointers, current sum integer and min length - NO running total array
+- The second pointer still reads the array, updating minLength everytime a valid interval is found
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 99.94%)
+- Memory: 69.04 MB (Beats 55.04%)
+- Time taken: 36m 46s
