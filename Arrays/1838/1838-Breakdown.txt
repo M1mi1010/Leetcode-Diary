@@ -1,0 +1,13 @@
+First attempt:
+- Was thinking of using pointers and increasing the window based on the pointers and then rechecking whats inside thw window
+
+Final attempt:
+- Two pointers, a sum value and a max window size value
+- Sort the array into ascending order
+- Calculate the sum of all the items, then the cost of the window which is (target * window size) - sum of the window
+- If the cost is greater than k, reduce the window size by removing nums[p1] from the sum, incrementing it and recalculate the cost until the cost <= k
+
+Stats (at time of submission):
+- Runtime: 33 ms (Beats 92.58%)
+- Memory: 94.84 MB (Beats 44.47%)
+- Time taken: 24m 41s
