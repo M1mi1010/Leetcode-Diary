@@ -1,0 +1,19 @@
+First attempt:
+- Originally was keeping a list of every number encountered.. got confused and tried brute force method 
+- Brute force: add each item to a list of numbers
+- In getProduct, iterate through the last k elements keeping track of the running product and return it
+
+Final attempt:
+- Instead kept a running list of the last products counted until a zero is seen
+- If it was a running product list, the logic would break as soon as a 0 is seen
+- Instead add 1 to the running list when it's initialised
+- Each time a number is added, check if it's zero. If it is clear the list and add 1 because anything before it wowuld've become zero since remember the problem is multiplying the LAST K elements (<- direction)
+    - {3,0,2,10,40,320} if the multiplication had a value of k at zero or before, the previous elements would be multiplied by that 0 resulting in 0 returned
+- If it's not a zero, add the number to the list multiplied by the last number that was in the list
+- Then in getProduct, if k is greater than the size of the list, return 0
+- Else return the last element divided by the k+1th LAST element
+
+Stats (at time of submission):
+- Runtime: 16 ms (Beats 99.87%)
+- Memory: 84.62 MB (Beats 48.15%)
+- Time taken: 43m 2s
