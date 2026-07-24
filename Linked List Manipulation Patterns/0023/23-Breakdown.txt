@@ -1,0 +1,33 @@
+BRUTE FORCE SOLUTION:
+  Final attempt:
+  - Same set up of a head, and a current node which is equal to head,, then returning head.next (pointing to first current at the end of the loop)
+  - Boolean found used for the while loop
+  - Within the while loop:
+    - Set an integer min to MAX VALUE and identify the index of the minimum value list node in the original list using it
+    - Check if the min value changes, if not set found to false so the while loop is exited
+    - Else, add the ListNode item at the index found to the current sorted list, update current and the node item 
+
+  Stats (at time of submission):
+  - Runtime: 126 ms (Beats 5.02%)
+  - Memory: 46.93 MB (Beats 28.76%)
+  - Time taken: 11m 41s
+
+
+OPTIMISATION 1:
+  - Added each item in all the lists to a priority queue
+  - Then poll everything from the priority queue, updating the next value
+
+  Stats (at time of submission):
+  - Runtime: 5 ms (Beats 41.48%)
+  - Memory: 46.51 MB (Beats 87.86%)
+  - Time taken: 11m 2s
+
+
+FINAL ATTEMPT:
+- Instead of adding all the lists, added the first value of each list
+- Every time you poll from the priority queue, add the item removed next value
+
+Stats (at time of submission):
+- Runtime: 4 ms (BEats 80.90%)
+- Memory: 46.88 MB (Beats 46.28%)
+- Time taken: 19m 10s
