@@ -1,0 +1,9 @@
+Final attempt:
+- Used an additional ListNode variable to skip until the last duplicate for the current element
+- And then set the current nodes next to point to the next non duplicate
+- Until end of list reached
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 45.12 MB (Beats 93.48%) 
+- Time taken: 6m 1s
