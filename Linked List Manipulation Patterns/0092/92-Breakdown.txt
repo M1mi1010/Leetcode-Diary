@@ -12,3 +12,4 @@ Final attempt:
 Stats (at time of submission):
 - Runtime: 0 ms (Beats 100.00%)
 - Memory: 43.06 MB (Beats 49.61%)
+- Time taken: 37m 47s
