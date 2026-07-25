@@ -1,0 +1,14 @@
+Final attempt:
+- Four main ListNode variables:
+  - First which is the item at the beginning of the reversed section
+  - Prev which is the item just before the section to be reversed but will always point to the previous item in the list relative to the current position
+  - After which is the item after the section to be reversed
+  - Tail which is set to the item just before the section to be reversed
+- First traverse the linked list to find the beginning of the reversal section, and end, at this point after is set to current.next, before is prev
+- Then reverse the section relevant
+- Set the item before the reversal to the new head of the reversed list
+- Set the end item after the reversal of the reversed section to point to the item after the reversal
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.06 MB (Beats 49.61%)
