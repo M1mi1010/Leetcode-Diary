@@ -1,0 +1,12 @@
+Final attempt:
+- Start with a ListNode prev which is initialised to null
+- While the head of the list isnt null - the end of the list isn't reached:
+  - Store the heads next value - which will be the head of the rest of the linked list to reverse
+  - Set the heads next value to be prev
+  - Set prev to be the head which is now disconnected from the rest of list
+  - Then update head to be the head of the rest of list
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.04 MB (Beats 84.26%)
+- Time taken: 4m 44s
