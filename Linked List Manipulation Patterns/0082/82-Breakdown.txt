@@ -1,0 +1,9 @@
+Finala attempt:
+- Create a dummy element pointing to the head to handle the case that the head immediately eneds to be removed, therefore returning dummy.next
+- Used a boolean flag checking if any duplicates were found in the list and then update the ListNode variable storing the last non duplicate element
+- Continue until head is null
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.87 MB (73.74%)
+- Time taken: 25m 23s
