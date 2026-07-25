@@ -1,0 +1,30 @@
+ATTEMPT 1 - STRING APPROACH:
+  - Read each item in the list until the end and append each value to a string builter
+  - Then compare the sb string to itself reversed
+  
+  Stats (at time of submission):
+  - Runtime: 17 ms (Beats 5.43%)
+  - Memory: 93.80 MB (Beats 97.78%)
+  - Time taken: 4m 39s
+
+ATTEMPT 2 - TWO POINTERS:
+  - Use a list to store every value in the linked list
+  - Use a two pointer approach to compare items in the list from each end
+  
+  Stats (at time of submission):
+  - Runtime: 7 ms (Beats 28.75%)
+  - Memory: 99.43 MB (Beats 21.96%)
+  - Time taken: 3m 6s
+
+FINAL ATTEMPT - LINKED LIST REVERSAL:
+  - Find the midpoint of the list using a fast ans slow pointer, and then handle the cases of a linked list of size 1 and 2 by checking fast pointers values
+  - Then the slow pointer ends up being at the midpoint and the fast pointer is at the end, set the slow pointer to be one after the midpoint
+  - Then reverse the list from the slow pointer (which now points to the beginning of the second half of the list, using a ListNode variable to keep track of the previous item
+  - At the end, slow is null and prev is the head of the reversed linked list, 
+  - Then while the previous pointer is not null, compare its value to heads value, updating head and prev each iteration
+    - NOTE: you have to do while the prev pointer isn't null because the reversed list will be shorter than the non reversed one
+
+  Stats (at time of submission):
+  - Runtime: 3 ms (Beats 99.82%)
+  - Memory: 94.19 MB (Beats 90.41%)
+  - Time taken: 36m 31s
