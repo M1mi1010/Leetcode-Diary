@@ -4,6 +4,8 @@
 
 | 3 | [Intersection Detection](#intersection-detection) | Intersection of Two Linked Lists, Minimum Index Sum |
 
+| 4 | [Addition of Numbers](#addition-of-numbers--linked-lists) | Add Two Numbers, Plus One Linked List |
+
 ## Merging Two Sorted Lists
 
 **When to use:** Combining two already-sorted linked lists into one sorted list, implementing
