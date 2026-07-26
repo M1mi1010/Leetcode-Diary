@@ -17,7 +17,7 @@ public class Solution {
         ListNode currentA = headA;
         ListNode currentB = headB;
 
-        while (aEndReached != 2 && bEndReached != 2) {
+        while (aEndReached != 2 || bEndReached != 2) {
             if (currentA == currentB) return currentA;
             
             if (currentA == null) {
