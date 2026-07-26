@@ -200,3 +200,79 @@ list against the map. Track the pair with the minimum combined index sum.
 | Length equalisation | O(m + n) | O(1) |
 | Two-pointer shortcut | O(m + n) | O(1) |
 | Hash map (index sum variant) | O(m + n) | O(m) |
+
+## Addition of Numbers — Linked Lists
+
+**When to use:** Adding numbers represented as linked lists, simulating arithmetic on
+data structures where digits are stored as nodes. Look for "add", "sum", or "plus" where
+the input is a linked list of digits.
+
+---
+
+### Key Idea
+
+Digits are stored in nodes, so you can't do arithmetic directly. Simulate grade-school
+addition — process digit by digit, tracking a carry that propagates forward through
+the list.
+
+---
+
+### Digit Order Matters
+
+Problems vary in how digits are ordered in the list:
+
+**Reverse order (most common — Add Two Numbers):** The head is the least significant
+digit. This is convenient because addition naturally starts from the least significant
+digit, so you can just walk both lists forward together.
+
+**Forward order (Plus One Linked List):** The head is the most significant digit.
+Addition starts at the tail, so you need to either reverse the list first, use a stack
+to process from the end, or use recursion to carry back up from the tail.
+
+---
+
+### The Carry
+
+At each position, compute `sum = digit1 + digit2 + carry`. The new digit is `sum % 10`
+and the new carry is `sum / 10`. After processing all nodes, if carry is still 1,
+append a new node with value 1.
+
+```
+list1: 2 → 4 → 3   (represents 342)
+list2: 5 → 6 → 4   (represents 465)
+
+Step 1: 2+5=7, carry=0 → node 7
+Step 2: 4+6=10, carry=1 → node 0
+Step 3: 3+4+1=8, carry=0 → node 8
+
+Result: 7 → 0 → 8   (represents 807) ✓
+```
+
+---
+
+### Plus One Variant
+
+Only one list, add 1 to the number it represents. The carry can only be 1 or 0, and
+only propagates when a digit is 9. The worst case is all nines — every digit becomes 0
+and a new head node with value 1 is prepended.
+
+**Stack approach:** Push all nodes onto a stack, pop and add 1 with carry propagation,
+update node values in place. If carry remains after the stack is empty, prepend a new
+node.
+
+---
+
+### Edge Cases to Watch
+- Lists of different lengths — when one runs out, treat missing digits as 0.
+- Carry after the last digit — always check if carry remains and append a node if so.
+- All nines — every node becomes 0, a new head is needed.
+- Single node lists — the formula still works naturally.
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Add Two Numbers | O(max(m, n)) | O(max(m, n)) for result list |
+| Plus One (stack) | O(n) | O(n) for stack |
+| Plus One (reverse) | O(n) | O(1) extra |
