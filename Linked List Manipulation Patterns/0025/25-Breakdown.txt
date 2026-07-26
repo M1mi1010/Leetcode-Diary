@@ -1,0 +1,11 @@
+Final attempt:
+- Four variables: one for start of group, end of the group, the element before the group and the element after the group
+- First check if there are enough elements left to make a group, if not break from the while loop using a boolean flag
+- Then reverse the elements in the group
+- Then update the pointers around the group
+- Reopeat until you cannot make a group of size k
+
+Stats (at time of submission):
+- Runtime: 1ms (Beats 33.04%)
+- Memory: 46.21 MB (Beats 75.42%)
+- Time taken: 30m 29s (But I restarted once after about 30 min)
