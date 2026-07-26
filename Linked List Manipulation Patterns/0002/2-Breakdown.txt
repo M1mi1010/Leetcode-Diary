@@ -1,0 +1,11 @@
+Final attempt:
+- Create a dummy nonde and then set current to the dummy node
+- While the end of both lists isn't reached, continue to calculate the sum of nodes
+- Set the prev (current items next) to be the sum % 10
+- Update current and the carry
+- At the end of the list, check what carry is
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 100.00%)
+- Memory: 46.46 MB (Beats 57.99%)
+- Time taken: 23m 48s
