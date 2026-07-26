@@ -1,5 +1,7 @@
 | 1 | [Merging Two Sorted Lists](#merging-two-sorted-lists) | Merge Two Sorted Lists, Merge K Sorted Lists |
+
 | 2 | [In-place Reversal of Linked Lists](#in-place-reversal-of-linked-lists) | Reverse Linked List, Reverse Linked List II |
+
 | 3 | [Intersection Detection](#intersection-detection) | Intersection of Two Linked Lists, Minimum Index Sum |
 
 ## Merging Two Sorted Lists
