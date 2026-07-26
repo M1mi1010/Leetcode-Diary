@@ -1,0 +1,14 @@
+First attempt:
+- Tried using two pointers and reading to the end of one list, then continuing to the beginning of the other like I did with 160
+
+Final attempt:
+- Put all the strings and their indexes into a hashmap
+- Then read through the next list and check if each string is a key in the map
+- If it is then compare the map value and curent index to the running minimum
+- If equal to minimum, just add the string, if its less than the minimum, clear the list and add the current item
+- Convert the list to an array that can be returned
+
+Stats (at time of submission):
+- Runtime: 8ms (Beats 96.53%)
+- Memory: 47.77 MB (Beats 50.22%)
+- Time taken: 19m 54s
