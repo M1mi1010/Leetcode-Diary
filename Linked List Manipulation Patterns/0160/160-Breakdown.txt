@@ -1,0 +1,10 @@
+Final attempt:
+- Used the two pointer approach to read each value in the list and then when the end of one list is reached, continue reading from the beginning of the last list
+- At each iteration, check if the values are equal
+- Used an integer counter to check if the end is reached of both lists
+- If the ends of both lists are reached, return null because they dont meet
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 49.77%)
+- Memory: 52.67 MB (Beats 80.75%)
+- Time taken: 16m 11s
