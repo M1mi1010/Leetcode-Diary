@@ -6,6 +6,8 @@
 
 | 4 | [Addition of Numbers](#addition-of-numbers--linked-lists) | Add Two Numbers, Plus One Linked List |
 
+| 5 | [Reordering / Partitioning Linked Lists](#reordering--partitioning-linked-lists) | Partition List, Odd Even Linked List, Reorder List, Rotate List |
+
 ## Merging Two Sorted Lists
 
 **When to use:** Combining two already-sorted linked lists into one sorted list, implementing
@@ -278,3 +280,83 @@ node.
 | Add Two Numbers | O(max(m, n)) | O(max(m, n)) for result list |
 | Plus One (stack) | O(n) | O(n) for stack |
 | Plus One (reverse) | O(n) | O(1) extra |
+
+## Reordering / Partitioning Linked Lists
+
+**When to use:** Grouping nodes by a condition, alternating between two groups, rotating
+a list, swapping adjacent nodes. Look for "partition", "reorder", "rotate", "swap", or
+"group" in the problem statement.
+
+---
+
+### Key Idea
+
+Instead of creating new nodes, rewire the `next` pointers of existing nodes to achieve
+the new order. Build separate sub-lists as you traverse, then connect them at the end.
+
+---
+
+### Core Approaches
+
+**Two separate lists (partitioning):** Use two dummy nodes as anchors — one for each
+group. Walk the list, append each node to the correct group, then connect the two lists
+at the end. Preserves relative order within each group naturally.
+
+```
+Input:  1 → 4 → 3 → 2 → 5 → 2,  x = 3
+Less:   1 → 2 → 2
+Greater: 4 → 3 → 5
+Result: 1 → 2 → 2 → 4 → 3 → 5
+```
+
+**Alternating pointers (odd/even grouping):** Use two pointers to separate nodes at
+even and odd indices into two chains as you walk forward, then connect odd chain to
+even chain.
+
+**Find middle then reconnect (reorder list):** Use slow/fast pointers to find the
+middle, reverse the second half, then interleave the two halves.
+
+**Rotation:** Find the tail and the new head using length arithmetic, then reconnect
+tail to old head and break the link before the new head.
+
+---
+
+### The Dummy Node Pattern
+
+Every partitioning problem benefits from dummy nodes — one per group. They act as
+anchors so you never have to special-case the head of each group:
+
+```
+lessHead → [dummy]    greaterHead → [dummy]
+less → tracks tail    greater → tracks tail
+
+At end: less.next = greaterHead.next
+        greater.next = null
+        return lessHead.next
+```
+
+---
+
+### Always Null-Terminate
+
+After connecting groups, explicitly set the tail of the last group to null. Without
+this, you risk cycles — the last node may still point to somewhere in the middle of
+the original list.
+
+---
+
+### Edge Cases to Watch
+- All nodes in one group — the other group's dummy has no nodes; connect to null.
+- Empty list or single node — return as-is.
+- Even vs odd length — alternating and reorder problems behave differently; test both.
+- Rotation by full length — rotating by `k % n` handles this; net effect is no change.
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Partitioning | O(n) | O(1) |
+| Odd/even grouping | O(n) | O(1) |
+| Reorder list | O(n) | O(1) |
+| Rotation | O(n) | O(1) |
