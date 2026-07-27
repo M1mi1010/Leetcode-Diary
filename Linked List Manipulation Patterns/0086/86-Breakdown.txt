@@ -1,0 +1,14 @@
+First attempt:
+- Tried using a skipping method but was super complicated
+- Spent about 35 min on this attempt
+
+Final attempt:
+- Overall: Read each list and keep one list of values less than x, and then another for one greater than x
+- So needed two dummy heads for the two lists, and then set the next to head
+- Keep track of the last element in list 1, and the start element of list1 and the start element of list 2 
+- So that I can connect end of list1 to beginning of list2, and then return the start element of list 1
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 443.66 MB (Beats 84.98%)
+- Time taken: 16m 14s
