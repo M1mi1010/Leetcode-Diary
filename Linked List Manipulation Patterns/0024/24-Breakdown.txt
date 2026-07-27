@@ -1,0 +1,17 @@
+First attempt:
+- Started with prev pointing to the first node in the list and current at the second item in the list
+
+Final attempt:
+- Check if theres 0 or 1 element in the list return null/head
+- Set the dummy to be the element before the head
+- Then keep track of three ListNode elements, the previous item, current and the next item - where prev is the dummy, current is the one after prev and the next one is the one after current one
+- While the next one is not null
+- Keep track of the element after next (the following item after a pair)
+- Update the pointers of prev,n and current to swap the values
+- Update prev to current (advancing by 1), update current to after (advancing by 1), check if current is null (end of list reached) update n to be the one after current
+- Return dummy.next
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.10 MB (Beats 49.11%)
+- Time taken: 26m 8s 
