@@ -1,0 +1,20 @@
+First attempt:
+- Originally wrote a while loop which would find the last item and then rotate continuously until k rotations were done
+- Too slow
+
+Second attempt:
+- Instead tried using a fast and slow pointer which would find the kth element from the end
+- This is done by initially advancing fast by k and then increase fast and slow at the same rate, then slow would be at the kth element from the end
+
+Final attempt:
+- Found length of the list, and then do k %= length (incase k is larger than th length - preventing a cycle/more efficient)
+- Then if k is 0 return the original head;
+- Else find the kth element from the end using a for loop which finds the new tail
+- Then the new head would be the newTail.next
+- Point the last element from the end to the the original head 
+- Then make the newTail point to null to break the cycle
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.54 MB (Beats 10.18%)
+- Time taken: 33m 35s
