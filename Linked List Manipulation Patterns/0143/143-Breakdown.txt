@@ -1,0 +1,10 @@
+Final attempt:
+- First find the midpoint of the list using a fast and slow pointer
+- Then create a second list from the after the midpoint to the end - building the list in REVERSE order
+- Then join the two lists together by alternating values
+- NOTE: have to be really careful about where the end values of the nodes after after each stage, and making sure to change them to null
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 87.03%)
+- Memory: 49.29 MB (Beats 53.96%)
+- Time taken: 37m 2s
