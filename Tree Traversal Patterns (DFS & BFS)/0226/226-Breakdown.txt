@@ -1,0 +1,12 @@
+First attempt:
+- Originally the helper functions took a left and right node 
+
+Final attempt:
+- Helper function takes a single node 
+- Check if node is null, if so return
+- Set left to right and right to left
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 42.85 MB (Beats 66.37%)
+- Time taken: 9m 27s
