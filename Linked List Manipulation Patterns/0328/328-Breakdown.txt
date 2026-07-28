@@ -1,0 +1,14 @@
+First attempt:
+- Tried to read through the array and swap values until the end of the list is found
+
+Final attempt:
+- Realised I could just create a list of the odd elements and a list of the even elements using a while loop
+- In each iteration you get the next pair
+- Realised that the currentEven and currentOdd listnodes would be the last elements in each list so didn't need to store them separately
+- Connected the two lists together 
+- Then returned odd head
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.19 MB (Beats 90.11%)
+- Time taken: 22m 14s
