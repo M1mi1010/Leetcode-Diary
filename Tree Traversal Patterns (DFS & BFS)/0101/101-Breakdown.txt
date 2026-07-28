@@ -1,0 +1,12 @@
+First attempt:
+- I knew I needed to compare the left and right subtrees but couldn't figure out how
+
+Final attempt:
+- Created a helper method which takes the root node left subtree and right subtree
+- The helper function checks if both subtrees are null, or one and that the values of each node is correct.
+- Then call the helper function the left.left n right.right and call it again left.right and right.left
+
+Stats (at time at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.65 MB (Beats 33.99%)
+- Time taken: 9m 30s
