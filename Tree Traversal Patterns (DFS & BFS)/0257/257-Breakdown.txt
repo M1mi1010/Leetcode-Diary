@@ -1,0 +1,22 @@
+Final attempt:
+  - Main function:
+    - Check if the root node is null
+    - If the root has no children (tree size 1) just return a list with the root node value
+    - Call the helper function
+  - Helper function:
+    - Takes three parameters: list which contains all the paths to leaf nodes, a tree node and the String Builder path to the leaf node
+    - Return if the node is null
+    - Add the node value to the current path
+    - Check if the node is a leaf node, if so add the current path to the list and return
+    - At this point the node has at least one child node, so append "->" to the path current path
+    - If the right node exists:
+      - Create a copy of the tree before the branch
+      - Then call the function on the right node with the new path
+    - Repeat on the left tree
+
+  - Note: you have to call the recursive call on a copy of the path so that you handle the split
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 99.91%)
+- Memory: 44.14 MB (Beats 73.53%)
+- Time taken: 35m 22s
