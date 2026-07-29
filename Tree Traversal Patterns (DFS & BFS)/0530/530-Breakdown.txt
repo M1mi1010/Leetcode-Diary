@@ -1,0 +1,12 @@
+First successful attempt:
+- Inorder traversal adds each node to a list
+- Then find the minimum by checking to the right
+- 6m 21s, 1ms
+
+Final attempt:
+- Kept track of previous and updated a min global variable each time a parent node is examined in LNR
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.91 MB (Beats 35.04%)
+- Time taken: 13m 4s
