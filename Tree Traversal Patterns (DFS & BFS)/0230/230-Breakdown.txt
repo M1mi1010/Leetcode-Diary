@@ -1,0 +1,9 @@
+Final attempt:
+- Keep a global variable for answer and index
+- If the root is null return -1;
+- Do an inorder traversal on it, incrementing the index when N in LNR is hit
+- If the index == k then set answer and return from the traversal
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.94 MB (Beats 17.73%)
