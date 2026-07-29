@@ -1,0 +1,12 @@
+Final attempt:
+- Keep a global list
+- Check if root is null, return list
+- Then to do preorder, only return if root is null
+- Else if root.left isnt null, call inorder on it
+- Add the root.val
+- If root.right isnt null, call inorder on it
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.28 MB (Beats 70.79%)
+- Time taken: 11m 33s
