@@ -1,0 +1,14 @@
+First attempt:
+- Used in order traversal
+- Global hashmap variable, highest count and a list of all modes
+- Worked but was 3 ms runtime
+
+Final attempt:
+- Whilst performing in order traversal, realised the items would be in order and checked the running total, keeping track of the previous values
+- Update the list of modes
+- Convert list of modes to array at the end
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 47.32 MB (Beats 10.91%)
+- Time taken: 22m 25s
