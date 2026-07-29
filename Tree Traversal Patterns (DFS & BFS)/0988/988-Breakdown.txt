@@ -1,0 +1,14 @@
+First attempt:
+- Used a lists storing all the paths and then checked which was the smallest path using String.compareTo() which does lexographic comparisons
+- Worked but was 4 ms (Beats 45.89%)
+
+Final attempt:
+- Instead used a global variable which stores the smallest 
+- Do dfs, finding all the paths and then reverse the current path if its a leaf
+- Compare and update smallest
+- I successfully remembered that you have to call reecursion on a copy of the path before the branch
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 61.62%)
+- Memory: 47.32 MB (Beats 7.22%)
+- Time taken: 14m 6s
