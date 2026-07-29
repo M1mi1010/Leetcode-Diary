@@ -10,4 +10,4 @@ NOTE: Need to try do in place next time
 Stats (at time of submission):
 - Runtime: 1 ms (Beats  18.90%)
 - Memory: 43.84 MB (Beats 71.95%)
-- Time taken: 10m 5s
+- Time taken: 15m 5s
