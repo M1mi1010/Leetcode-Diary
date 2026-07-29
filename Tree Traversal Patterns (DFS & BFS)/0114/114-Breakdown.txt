@@ -1,0 +1,13 @@
+First attempt:
+- Tried to do this inplace by rearranging nodes
+
+Final attempt:
+- Read the list in preorder form, adding each node into a list
+- Then set root.right to the next one to the right
+
+NOTE: Need to try do in place next time
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats  18.90%)
+- Memory: 43.84 MB (Beats 71.95%)
+- Time taken: 10m 5s
