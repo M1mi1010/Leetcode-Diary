@@ -1,0 +1,13 @@
+Final attempt:
+- Stored a global maxDepth variable which is returned
+- Call postorder on left, then on right
+- Calculate the depth of the current node 
+- Compare to, and update max height
+- Mistakes:
+  - I was returning the max of the left and right subtrees for the current node without adding the current node to the height for backtracking, so that the current node is included in the propogation
+  - Made the same off by one mistake when calculating the current depth
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 47.17 MB (Beats 12.96%)
+- Time taken: 7m 26s
