@@ -1,0 +1,19 @@
+First attempt: 
+- Was accidentally calculating the difference between left and right subtrees
+
+Final attempt:
+- Kept a global variable for the diameter
+- The max diameter has to be checked for every node because the max diameter is essentially the longest path between two nodes
+- Calculate left and right heights and update global diameter variable to be the total of them or the diameter (whichever is greater)
+- Then return the current height from the current node
+
+Why its hard:
+- Diameter = longest path between any two nodes, NOT the right most + left most nodes
+- For any route you need the height of the left and right subtree
+- The diameter might not go through the root
+
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.55 MB (Beatsw 98.25%)
+- Time taken: 21m 17s
