@@ -1,0 +1,10 @@
+Final attempt:
+- Couldn't figure out how I might do the traversal incrementally 
+- Did inorder traversal, storing all the nodes in a list with an index variable, initialised to -1
+- Then increment index when next is called and return item from list
+- Then in has next, check if the index variable is less than the whole array
+
+Stats (at time of submission):
+- Runtime: 17 ms (Beats 93.59%)
+- Memory: 49.98 MB (Beats 91.99%)
+- Time taken: 9m 6s
