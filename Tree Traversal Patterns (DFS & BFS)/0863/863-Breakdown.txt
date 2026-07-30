@@ -1,0 +1,16 @@
+Final attempt:
+- Did a post order traversal to find each nodes parent value and put it in a hashmap
+- Then perform a BFS from the target node spreading out:
+  - Use a queue which stores each level
+  - First offer the target to the queue, and mark it as visited ( in a set )
+  - Then while the queue isnt empty:
+    - Go through each item in the list and replace it by all three of its neighbours (third being the parent) checking if they've been marked as visited and if they are null before adding
+    - Each iteration of the for loop, a layer is processed
+  - Each iteration of the while loop, check if level is k and then break if it is
+- Then at the point of breaking, the queue contains all values k distance away in the graph
+- Add all the values in the queue to the list
+
+Stats (at time of submission):
+- Runtime: 12 ms (Beats 83.61%)
+- Memory: 43.68 MB (Beats 95.21%)
+- Time taken: 30m 54s
