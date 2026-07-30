@@ -1,0 +1,9 @@
+Final attempt:
+- Originally kept an integer, prev which was -1 but then the node val range is: -2^31 <= Node.val <= 2^31 - 1
+- Keep a global Integer set to null, and a boolean true;
+- Perform inorder traversal LNR checking if order is maintained, updating prev value
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 45.34 MB (Beats 21.82%)#
+- Time taken: 5m 57s
