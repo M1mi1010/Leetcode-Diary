@@ -1,7 +1,9 @@
 ## Tree Traversal — DFS Patterns
 
 | 1 | [Recursive Preorder](#recursive-preorder-root--left--right) | Binary Tree Paths, Invert Binary Tree |
+
 | 2 | [Recursive Inorder](#recursive-inorder-left--root--right) | Kth Smallest in BST, Minimum Absolute Difference |
+
 | 3 | [Recursive Postorder](#recursive-postorder-left--right--root) | Max Depth, Diameter, Balanced Tree, Max Path Sum |
 
 ---
