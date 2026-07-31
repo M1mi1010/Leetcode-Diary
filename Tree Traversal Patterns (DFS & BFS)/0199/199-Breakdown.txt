@@ -1,0 +1,12 @@
+First attempt:
+- Was first looking down only one side of the tree and realised when the rightmost side didn't exist, there's no way to get the left
+
+Final attempt:
+- Keep a list
+- Keep a queue of treenodes
+- Whilst the queue isn't empty, calculate its size and for each item in the queue, replace it with its neighbours
+- When you get to the last item in the queue, record it and add it to the list
+
+Stats (at time of submission):
+- Runtime: 1ms (Beats 70.40%)
+- Memory: 43.56 MB (Beats 70.10%)
