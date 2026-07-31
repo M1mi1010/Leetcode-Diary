@@ -1,0 +1,11 @@
+Final attempt:
+- If root is null return -1
+- Keep track of maxSum (set to min value), then max level and the current level
+- Traverse the tree layer by layer using a queue
+- If the current sum at the end of the layer being processed (after for loop) is greater than max sum, then update maxsum and remember the level
+- Increment the level
+
+Stats (at time of submission):
+- Runtime: 8 ms (Beats 96.29%)
+- Memory: 49.20 MB (Beats 57.43%)
+- Time taken: 6m 27s
