@@ -1,0 +1,13 @@
+Final attempt:
+- The post order returns an integer array of size 2.
+- Return the maximum of the array
+- {if I rob this node, if I do not rob this node}
+- In the helper, call on left, then right
+- When you get to the node, create a new array.
+  - Position 0 is the result of not including the left AND right children, and including the current node (left[1] + right[1] + root.val)
+  - Position 1 is the result of including the max of the left and right arrays
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.52 MB (Beats 58.77%)
+- Time taken: 13m 7s
