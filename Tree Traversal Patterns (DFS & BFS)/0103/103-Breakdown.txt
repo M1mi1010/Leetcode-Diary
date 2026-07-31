@@ -1,0 +1,14 @@
+First successful attempt - 14m 31s, 1ms:
+- While the queue isn't empty, read its level
+- Keep reading from left to right
+- Reverse the level before adding it to list of levels
+
+Final attempt: 
+- Used a deque instead of a queue for the nodes
+- Read the level from left to right or right to left depending on direction, also add and remove from the correct end depending on the direction
+
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 79.55%)
+- Memory: 43.79 MB (Beats 44.60%)
+- Time taken: 23m 134s
