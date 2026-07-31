@@ -1,0 +1,13 @@
+Final attempt:
+- Hard to wrap my head around, could only think of doing a brute force of finding all paths
+- Do a DFS, where each node reports to its parent if the p or q is in its subtree
+- Rules:
+  - Get left and right
+  - If root is p or q, return it to the top
+  - If left and right are non null, p and q aren't on the same side and the root now is their LCA
+  - Else, return the non null side
+
+Stats (at time of submission):
+- Runtime: 16 ms (Beats 48.65%)
+- Memory: 69.94 MB (Beats 32.38%)
+- Time taken: 12m 47s
