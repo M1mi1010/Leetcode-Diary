@@ -1,0 +1,13 @@
+Final attempt:
+- Converted the array to_delete into a set so i can quickly check contains in O(1) time 
+- Then in the postorder return root
+- Check left and right nodes and then if the set contains the values, add the left and right subtrees to a list
+- Set the value to be null
+- The post order returns the root of the tree
+- Then back in main, check if the root returned is null (aka it was in the set to be deleted)
+- If it wasn't add it to the list and return the list
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 98.43%)
+- Memory: 46.35 MB (Beats 95.28%)
+- Time taken: 22m 51s
