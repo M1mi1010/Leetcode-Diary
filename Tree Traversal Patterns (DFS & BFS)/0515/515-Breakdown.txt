@@ -1,0 +1,9 @@
+Final attempt:
+- Keep a list of all the highest items found in each row
+- Traverse the tree row by row and at the end of traversing each row add the max to the list
+- Return the list
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 89.17%)
+- Memory: 47.16 MB (Beats 78.46%)
+- Time taken: 5m 30s
