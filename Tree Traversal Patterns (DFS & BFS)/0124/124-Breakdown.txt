@@ -1,0 +1,13 @@
+Final attempt:
+- Set the global variable max to be outside the range
+- Find left ad right of each node
+- If the node is < 0, just set left/right to 0
+- Find the max path at this point
+- Return the maximum current path
+
+- In main function, return the max between the found at the node and the current max
+
+Stats (at time of submission);
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 46.52 MB (Beats 77.19%)
+- Time taken: 26m 28s
