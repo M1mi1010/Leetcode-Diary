@@ -1,0 +1,10 @@
+Final attempt:
+- Keep a list of list of levels
+- Keep a queue for tracking each level
+- Scan the binary tree in each level and add to a level list
+- Then add then add level to levels
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 95.89%)
+- Memory: 46.92 MB (Beats 22.88%)
+- Time taken: 2m 57s
