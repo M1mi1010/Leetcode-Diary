@@ -1,0 +1,17 @@
+Final attempt:
+- Set max to be integer min value
+- Find the maxx for the first window
+- Then do a sliding window, adding and removing the next and last values
+- Update maxx
+- Return max / k casted to a double
+
+How I improved efficiency:
+- Used an int for the sum instead of double set to Double.MAX_VALUE * -1 (because min value is 0)
+- Originally was using a while loop and pointers, changed it to a for loop, less pointers and less updating 
+- Did the division at the end of the function and casted it
+- Instead of using Math.max do: if (curMax > maxx) maxx = curMax;
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 99.75%)
+- Memory: 69.78 MB (Beats 26.45%)
+- Time taken: 14m 32s (including several stages of micro optimisation)
