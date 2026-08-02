@@ -6,6 +6,10 @@
 
 | 3 | [Recursive Postorder](#recursive-postorder-left--right--root) | Max Depth, Diameter, Balanced Tree, Max Path Sum |
 
+| 4 | [Lowest Common Ancestor](#lowest-common-ancestor) | LCA of Binary Tree, LCA of BST |
+
+| 5 | [Serialization and Deserialization](#serialization-and-deserialization) | Subtree of Another Tree, Find Duplicate Subtrees, Serialize and Deserialize |
+
 ---
 
 ### Recursive Preorder (Root → Left → Right)
@@ -187,3 +191,157 @@ not both).
 | Skewed tree | O(n) | O(n) call stack |
 
 Every node is visited exactly once regardless of what computation happens at each node.
+
+## Lowest Common Ancestor
+
+**When to use:** Finding where two nodes first share a common ancestor, any problem
+asking "where do these two paths converge from the root downward".
+
+---
+
+### Key Idea
+
+The LCA of two nodes p and q is the deepest node in the tree that has both p and q
+as descendants (a node is a descendant of itself). You're looking for the point where
+the paths from the root to p and root to q diverge.
+
+---
+
+### The Core Insight
+
+At any node, there are three possible situations:
+- Both p and q are in the left subtree → LCA is somewhere in the left subtree
+- Both p and q are in the right subtree → LCA is somewhere in the right subtree
+- p and q are on opposite sides (or the current node is p or q) → this node IS the LCA
+
+This is naturally postorder — you need to know what each subtree contains before
+deciding whether the current node is the answer.
+
+---
+
+### Binary Tree vs BST
+
+**General Binary Tree:** You have no information about node placement, so you must
+search both subtrees. Each recursive call reports whether it found p, q, or neither.
+When a node gets "found p" from one side and "found q" from the other, it is the LCA.
+
+**Binary Search Tree:** The ordered structure tells you exactly which subtree to search
+without looking at both. If both p and q are less than the current node, go left. If
+both are greater, go right. The first node where they diverge (one goes left, one goes
+right) is the LCA. This makes BST LCA much simpler — no need to search both sides.
+
+---
+
+### What to Return Upward
+
+For the general tree, your recursive function needs to communicate which targets it
+found. Think carefully about what return value lets a parent node know:
+- Neither target was found below
+- One of the targets was found below
+- The LCA itself was found below (so stop searching)
+
+---
+
+### Edge Cases to Watch
+- A node can be its own ancestor — if p is an ancestor of q, then p is the LCA.
+- Both nodes are guaranteed to exist in the tree (for most problem variants) — if not,
+  you need extra checks.
+- Root is always a valid LCA (worst case both nodes are in different halves).
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Binary Tree | O(n) | O(h) call stack |
+| BST | O(h) | O(h) call stack |
+
+Where h = height. For balanced trees O(log n), skewed trees O(n).
+
+---
+
+## Serialization and Deserialization
+
+**When to use:** Converting a tree to a string/array representation and reconstructing
+it exactly, detecting structural patterns within trees, comparing subtrees.
+
+---
+
+### Key Idea
+
+Serialization encodes a tree into a linear format (string or array). Deserialization
+reconstructs the exact original tree from that format. The challenge is preserving
+enough structural information that reconstruction is unambiguous.
+
+---
+
+### Why Traversal Order Alone Isn't Enough
+
+A sequence of node values without null markers is ambiguous — multiple different trees
+can produce the same inorder or preorder sequence. You must encode null children
+explicitly so the structure is fully captured.
+
+---
+
+### Preorder is Natural for Serialization
+
+Preorder (root first) is the most common choice because during deserialization, you
+read the root first and can immediately reconstruct the tree top-down. Null markers
+tell you when a subtree ends.
+
+```
+Tree:        1
+            / \
+           2   3
+              / \
+             4   5
+
+Serialized: "1,2,null,null,3,4,null,null,5,null,null"
+```
+
+Reading left to right, you always know exactly what to build next.
+
+---
+
+### Deserialization Mindset
+
+Think of the serialized string as a stream of values. A pointer or index tracks your
+position. Each recursive call consumes one value — if it's null, return null. If it's
+a number, create a node, then recursively build its left child (consuming more values),
+then its right child.
+
+---
+
+### Subtree Detection
+
+To check if one tree is a subtree of another, you can serialize both trees and check
+if one string contains the other as a substring. The key — add delimiters around
+values so "12" doesn't match "1" and "2" as separate nodes.
+
+---
+
+### Duplicate Subtrees
+
+To find duplicate subtrees, serialize every subtree (postorder works naturally here —
+children are serialized before the root) and use a frequency map. A subtree that has
+been seen before is a duplicate. The serialization acts as a structural fingerprint.
+
+---
+
+### Edge Cases to Watch
+- Empty trees must be encoded — a missing null marker breaks deserialization.
+- Delimiter choice matters — without separators, multi-digit numbers become ambiguous.
+- For subtree matching via string contains, wrap values in delimiters to prevent
+  partial matches.
+- Duplicate subtrees: a single null node appears many times — decide whether to count
+  it as a duplicate or ignore it.
+
+---
+
+### Complexity
+| | Time | Space |
+|--|------|-------|
+| Serialize | O(n) | O(n) |
+| Deserialize | O(n) | O(n) |
+| Subtree check (string) | O(m·n) naive | O(m+n) |
+| Duplicate subtrees | O(n²) worst case for string keys | O(n) |
