@@ -1,0 +1,13 @@
+Final attempt:
+- Hard to wrap my head around but after watching youtube videos for helping me do 236 I understand better
+- If root is null then we've gone to the bottom and already found the lca
+- If the root is p or q return root
+- Else we can search for it:
+  - Compare root val to p and q to determine which side to search
+
+- Originally did without using the fact that its a bst, then redid
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 96.94%)
+- Memory: 47.95 MB (Beats 16.94%)
+- Time taken: 7m 50s
