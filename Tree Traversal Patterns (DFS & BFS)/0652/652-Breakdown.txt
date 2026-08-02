@@ -1,0 +1,10 @@
+Final attempt:
+- Kept a global map and list for answer
+- Added a helper which performs postorder traversal and serialise at each node 
+- Increase frequency of this path by one
+- If its count is 2 then add it to the list
+
+Stats (at time of submission):
+- Runtime: 21 ms (Beats 9.90%)
+- Memory: 62.77 MB (Beats 8.28%)
+- Time taken: 20m 24s
