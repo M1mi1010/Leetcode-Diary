@@ -1,0 +1,19 @@
+Initial attempt:
+- Was trying to use the same pq for all windows
+
+Final attempt:
+- Created a hashmap for each number and its frequency
+- Populate the hashmap for the first k elements
+- Then for each index in the answer array:
+  - Create a priority queue with ordering - also handle ties with frequency
+  - Add every entry in the map to the priority queue
+  - Get the top x elements and add it to a sum by polling the queue x times
+  - Then store in answer array
+  - Update the count for the item, removing it from the map if it's count is less than 0
+  - If i == answer.length - 1, break because at this point because this is the last iteration
+  - Else update the map to include the next item
+
+Stats (at time of submission):
+- Runtime: 12 ms (Beats 51.67%)
+- Memory: 47.50 MB (Beats 30.00%)
+- Time taken: 34m 32s
