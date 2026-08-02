@@ -1,0 +1,10 @@
+Final attempt:
+- Used two string builders for each node 
+- Then did a preorder traversal, adding each node to the string
+- Add a hash symbol as null and add a comma before each value as a separator to prevent case:
+    ",12,#,#,".contains(",2,#,#,")
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 10.29%)
+- Memory: 46.20 MB (Beats 88.29%)
+- Time taken: 15m 6s
