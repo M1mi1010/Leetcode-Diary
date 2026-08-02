@@ -1,0 +1,13 @@
+Original attempt:
+- Originally tried to do this using a sliding window 
+
+Final attempt:
+- Used a streak counter to be able to tell if the consecutive streak had been broken
+- Check the streak counter at each iteration to decide if you should write to answer array and what value to write
+- Noted that since the array should be in consecutive order, the last element would be the max
+- Return answer
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 100.00%)
+- Memory: 47.49 MB (Beats 32.84%)
+- Time taken: 21m 5s 
