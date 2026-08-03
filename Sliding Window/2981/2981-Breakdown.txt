@@ -1,0 +1,13 @@
+Final attempt:
+- Originally was super confused by the problem, I think of it as more of a two pointer problem than sliding window
+- Keep a counter, the longest string variable to return and a map of frequencies that a string appears
+- For each starting index in the string:
+  - Set a pointer p to the starting index
+  - While the pointer is valid and adjacent indexes are the same, update the frequency of the characters occurence
+  - Within the while loop: Check if the new count is at least 3, and then if the substring (i to p window) is longer than the currently recorded longest string. If so update the longest string value
+  - Return longest string value
+
+Stats (at time of submission):
+- Runtime: 9ms (Beats 60.08%)
+- Memory: 46.54 MB (Beats 54.15%)
+- Time taken: 18m 53s
