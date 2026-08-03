@@ -1,0 +1,13 @@
+Final attempt:
+- Keep a counter of the number of zeros
+- Keep a left pointer and a max variable
+- When the right pointer encounters a zero, increment the counter
+- If the number of zeros is greater than 1, increase left pointer until its valid again
+- Then update max and return it at the end of the for loop
+
+- Note: made mistakes with calculations - because you have to delete an element, even if there's no zeros 
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 87.37%)
+- Memory: 65.77 MB (Beats 5.10%)
+- Time taken: 13m 17s
