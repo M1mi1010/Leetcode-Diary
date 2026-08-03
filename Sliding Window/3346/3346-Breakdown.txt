@@ -1,0 +1,16 @@
+Final attempt:
+- Sort nums
+- Initialise max freq to 0 
+- Iterate over each unique number in nums as target
+- For each targewt
+  - Find its initial count
+  - Use binary search to find all numbers in the range [target - k, target + k]
+  - Calc no covertible
+  - Calc total freq = initial + min (convertible, num ops)
+  - Update max frequency
+- Return max frequency
+
+Stats (at time of submission)L
+- Runtime: 186 ms (Beats 24.43%)
+- Memory: 112.36 MB (Beats 56.25%)
+- Time taken: 1h+
