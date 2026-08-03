@@ -1,0 +1,14 @@
+Initial attempt:
+- 18 min 
+- Tried using a greedy approach but this doesn't guarantee a minimum operation is found
+
+Final attempt:
+- Calculate the total of the array, and subtract the target from it
+- Now the aim is to find the longest subarray which adds up to all the values we don't want
+- Keep a sum and a sliding window adding each element in the array to the sum, shrinking from the other end if the target is exceeded
+- Update any valid max found
+
+Stats (at time of submission):
+- Runtime: 5 ms (Beats 35.14%) - Could not see any way to optimise further, probably background noise
+- Memory: 102.01 MB (Beats 60.20%)
+- Time taken: 17m 20s
