@@ -1,0 +1,15 @@
+First attempt:
+- Mixed up the pointers roles
+
+Final attempt:
+- Keep a HashMap of the frequencies 
+- Keep a left pointer, right pointer (using the for loop), and max counters
+- Each iteration (each time right moves) you add the value to a frequency map
+- Adjust left until the size of the map is 2 again by removing the item at left
+- Update max
+- Return max
+
+Stats (at time of submission):
+- Runtime: 49 ms (Beats 88.76%)
+- Memory: 66.29 MB(Beats 95.75%)
+- Time taken: 13m 51s
