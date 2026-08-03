@@ -1,0 +1,14 @@
+Initial attempt:
+- I was mixing up the roles of the two pointers
+
+Final attempt:
+- If k < 1, return 0
+- Store a counter, product and left pointer
+- For each item in the array, multiply product by it 
+- While the product is not less than k, shrink window
+- Update count using valid window
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 99.97%)
+- Memory: 49.08 MB (Beats 51.32%)
+- Time taken: 17m 27s
