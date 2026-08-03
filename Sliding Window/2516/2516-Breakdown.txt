@@ -1,0 +1,15 @@
+Final attempt:
+- Don't think about "minimising taking elements", think about maximising the number you can keep
+- First check there's enough of each letter:
+  - Used an array length 3 to store the frequencies since the constraints say strings only contain a, b and c
+  - For each of the indexes in the frequencies, check its at least k 
+- Subtract k from each index in frequency array so that it stores the max freq for each character in the max substring we can keep
+- Maintain a current window, and for each letter in the string increment it's frequency in the current window
+- If the frequency for the character in current window is more than in freq (original array) then shrink window by decrementing count of character at left and incrementing left - until valid window
+- Update max 
+- Return s.length() - max which is the number we have to take
+
+Stats (at time of submission):
+- Runtime: 12 ms (Beats 82.31%)
+- Memory: 46.54 MB (Beats 78.82%)
+- Time taken: 19m 47s
