@@ -1,0 +1,11 @@
+Final attempt:
+- Keep an array of frequencies for each letter (by - 'A')
+- Increment the count for each new letter seen (right)
+- But if the window size - max frequency is more than k, shrink the window
+- Update max
+- Return max
+
+Stats (at time of submission):
+- Runtime: 7 ms (Beats 89.17%)
+- Memory: 46.10 MB (Beats 79.26%)
+- Time taken: 20m 29s
