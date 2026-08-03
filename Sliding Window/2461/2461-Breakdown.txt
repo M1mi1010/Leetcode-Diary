@@ -1,0 +1,17 @@
+First attempt:
+- Tried to use a set instead of map
+
+Final attempt:
+- First computed the initial window
+- If the frequency map has size k then the window was valid
+- When sliding, start right at k and left at 0:
+  - Get the count of the nums[left] item and remove it if the count updated is 0, else just add it with the decremented counter
+  - Then put the new right element into the map
+  - Update the sum (removing left and adding right)
+  - Check the map size before updating max
+- Return max
+
+Stats (at time of submission):
+- Runtime: 45 ms (Beats 67.76%)
+- Memory: 98.62 MB (Beats 75.29%)
+- Time taken: 23m 47s
