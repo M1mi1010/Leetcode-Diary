@@ -1,0 +1,23 @@
+First attempt:
+- Only handles items in the array
+
+Final attempt:
+- General: Check for each possibility, target exists in the array, or it doesn't
+- Sort the array so you can use sliding window
+- Count the existing values using a hashmap
+- Target exists:
+  - The list of all possible targets is all the keys in the map
+  - Sort this
+  - For each target in targets see how many items can reach the target in the array
+  - Update the global max variable answer, storing the max itmes:
+    answer = existing copies + numbers you can convert
+    
+- Target doesn't exist: (similar to 2779)
+ - Look at each element in nums, and check if the window is valid ( less than 2*k difference between nums[right] and nums[left]
+  - Then figure out how many operations are needed (whichevers smaller, the window or number of operations allowed)
+  - Update the max answer
+  
+Stats (at time of submission):
+- Runtime: 196 ms (Beats 83.33%)
+- Memory: 128.23 MB (Beats 81.11%)
+- Time taken: 1h 3m 38s
