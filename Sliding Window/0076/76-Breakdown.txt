@@ -1,0 +1,14 @@
+Final attempt:
+- Keep a general variable start, end, and minLength set to max value, left pointer, noMatched (from s to t) and a hashmap
+- Add each item in t to the map
+- Then walk through each item in the array:
+  - Check if array contains the value then decrement its count and update it
+  - If its new count is still positive then increment the number matched 
+  - While noMatched == the length of t, (valid window) then update the answer and shrink
+  - If count is positive when shrinking, decrement noMatched (because if its negative then we had extra)
+- Return minimum string
+
+Stats (at time of submission):
+- Runtime: 15 ms (Beats 58.56%)
+- Memory: 47.61 MB (Beats 28.91%)
+- Time taken: 37m 47s
