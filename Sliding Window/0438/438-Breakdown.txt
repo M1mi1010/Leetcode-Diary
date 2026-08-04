@@ -1,0 +1,17 @@
+Initial attempt:
+- Was keeping track of number of characters found in a window and then switched to the number remaining to find
+
+Final attempt:
+- Maintain a list of integers to return
+- Keep an array to store freqencies : the frequency at an index is the number of times it appears in p
+- For each index in the array:
+  - Check the frequency of the letter at right: if its >0 decrement needed because we found an item in the window. Update the frequency of the character --
+  - Check if the window is valid:
+    - Increment the frequency of the character at left (doesnt matter about incrementing characters that arent in p because we decrement their values when adding too
+    - Check if the frequency at the index is > 0 (this is a character thats needed) increase needed, and shift left
+  - If needed = 0 then a valid window is found, add its start index to the list
+
+Stats (at time of submission):
+- Runtime: 9 ms (Beats 92.39%)
+- Memory: 46.54 MB (Beats 92.50%)
+- Time taken: 23m 49s
