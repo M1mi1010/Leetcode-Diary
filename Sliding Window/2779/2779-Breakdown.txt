@@ -1,0 +1,11 @@
+Final attempt:
+- Sort the array
+- Then keep a left pointer, answer
+- For each item in the array, check if the difference between left and right is more than 2k, then increment left until its in range again
+- Update compare current valid range to answer and update it if current is higher
+- Return answer
+
+Stats (at time of submission):
+- Runtime: 45 ms (Beats 30.52%)
+- Memory: 91.34 MB (Beats 78.31%)
+- time taken: 10m 38s
