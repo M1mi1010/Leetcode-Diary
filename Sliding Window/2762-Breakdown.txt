@@ -1,0 +1,12 @@
+Final attempt:
+- Keep a counter, and a pointer left
+- Keep a treemap which sorts the values, .lastKey gets the highest value in the window and .firstKey is the last one
+- For each item in the array, put the latest right into the treemap
+- If the difference between lastKey and first Key is > 2, shrink using left pointer
+- Update count by adding right - left + 1 (size of current window)
+- Return count
+
+Stats (at time of submission):
+- Runtime: 29 ms (Beats 46.11%)
+- Memory: 84.10 MB (Beats 80.94%)
+- Time taken: 24m 33s
