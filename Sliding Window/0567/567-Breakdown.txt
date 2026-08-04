@@ -1,0 +1,19 @@
+Final attempt:
+- Similar to 483
+- Keep an array of frequencies, using that the strings only contains lower case characters
+- For each character in s1, increment its frequency
+- Keep track of the number of characters needed, initialised to the length of s1
+- For each item in the array:
+ - Check if the new item is in the frequency array (its count is greater than 0), if it is decrement needed
+ - Decrement the frequency of the item
+ - If the window is longer than s1:
+   - Increment the count for the letter at left
+   - If the new frequency is greater than 0, increase needed (because we removed a target letter)
+   - Increment left
+  - If needed == 0 and the window size is s1.length() then return true
+- If the  end of s2 is reached then return false
+
+Stats (at time of submission):
+- Runtime: 7 ms (Beats 69.37%)
+- Memory: 44.04 MB (Beats 61.26%)
+- Time taken: 16m 37s
