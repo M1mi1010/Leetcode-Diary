@@ -1,0 +1,12 @@
+First attempt:
+- Originally thought I could just keep track of count of brackets  
+
+Final attempt:
+- Instead keep a stack and increment the counter when you cant pop closing brackets from the stack
+- Push all open brackets
+- Return the counter plus the size of the stack (if any opening brackets remain)
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 66.90%)
+- Memory: 42.71 MB (Beats 77.62%)
+- Time taken: 5m 20s
