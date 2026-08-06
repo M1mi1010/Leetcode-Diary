@@ -1,0 +1,24 @@
+Final attempt:
+- The deque stores the max value in every window of k consecutive numbers without rescanning the whole window each time
+- Old nums get removed if they've expired — if someone was too many steps ago to still be "reachable" (outside the window), we kick them off the front.
+- Weak candidates get removed immediately if a better, newer one shows up, kick off the back
+- Deque is always sorted with the best at the front
+- Each iteration i (from 1 to n-1):
+  - Evict expired candidates from the front — if peekFirst() < i - k, that index is now outside the valid jump window [i-k, i-1], so remove it. Repeat until front is valid.
+  - Compute dp[i] — front of deque is guaranteed to be the best valid j, so dp[i] = dp[peekFirst()] + nums[i].
+  - Evict now-useless candidates from the back — while the back's dp value is ≤ dp[i], remove it. Reason: dp[i] is at least as good and more recent (stays in-window longer), so the old one can never win again.
+  - Add i to the back — it becomes a candidate for future indices.
+  
+Example:
+Say we have values: [5, 3, 8, 2, 9], window size k=2 (looking at max of last 2).
+
+- See 5. Leaderboard: [5]
+- See 3. Is 3 > 5? No, so 5 stays. Add 3. Leaderboard: [5, 3]
+- See 8. Is 8 > 3? Yes — kick out 3. Is 8 > 5? Yes — kick out 5 too. Leaderboard: [8]
+- See 2. Is 2 > 8? No. Add it. Leaderboard: [8, 2]
+- See 9. Is 9 > 2? Yes, kick out. Is 9 > 8? Yes, kick out. Leaderboard: [9]
+
+Stats (at time of submission):
+-  Runtime: 23 ms (Beats 86.64%)
+- Memory: 85.35 MB (Beats 38.11%)
+- Time taken: hours
