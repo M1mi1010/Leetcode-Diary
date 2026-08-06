@@ -1,0 +1,12 @@
+Final attempt:
+- Keep a StringBuilder variable to add and remove characters to/from
+- As you traverse through the string left to right, keep track of the balance between opening and closing brackets
+- Remove any excess closed brackets
+- Then if there are any imbalances (balanced is > 0) so there are excess open brackets
+- Remove and decrement balance each time an excess bracket is seen
+- Return the new string
+
+Stats (at time of submission):
+- Runtime: 14 ms (Beats 89.08%)
+- Memory: 47.12 mB (Beats 80.77%)
+- Time taken: 10m 38s
