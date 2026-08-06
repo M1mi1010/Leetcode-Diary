@@ -1,0 +1,24 @@
+String pointer approach:
+- Read the string from both ends 
+- If the current item is  a closing bracket, decrement the balanced counter, else increment the counter
+- Then check if balanced is less than 0 a swap needs to be done:
+  - Use the right pointer to find the next open bracket from the right end of the string
+  - Once an open bracket is found, increment swaps counter, and increase balanced by 2, decrement right
+
+  - Return number of swaps
+
+  Stats (at time of submission):
+  - Runtime: 17 ms (Beats 44.02%)
+  - Memory: 56.13 MB (Beats 94.24%)
+  - Time taken: 20m 9s
+
+Stack approach:
+- Less efficient but was using tracking of the matched and unmatched pairs
+
+Refined string pointer approach:
+- Instead of a while loop finding the next open bracket, increment unmatched and return the number swaps for unmatched
+- So if there are 3 unmatched, each swap deals with 2 unmatched 
+
+Stats (at time of submission):
+- Runtime: 14 ms (Beats 77.03%)
+- Memory: 59.29 MB (Beats 53.80%)
