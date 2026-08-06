@@ -1,0 +1,16 @@
+First attempt:
+- Originally was using a hashmap but then since there's only three types of bracket, used a switch to improve runtime
+- Originally used a stack, but changed to the Deque representation of a stack because it's a bit faster (less overhead)
+
+Final attempt:
+- Check the length of the string, if it's an odd length, return false
+- For each character, push it if its an opening bracket 
+- If not, check if the stack is empty (before popping). If it is return false
+- Then pop the item off the top of the stack, and check if it matches c
+
+- Return stack.isEmpty() - incase there are open brackets left on the stack
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 86.07%)
+- Memory: 43.15 MB (Beats 73.71%)
+- Time taken: 10m 12s
