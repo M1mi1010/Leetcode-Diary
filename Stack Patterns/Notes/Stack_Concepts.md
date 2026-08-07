@@ -1,6 +1,7 @@
 ## Stack Patterns
 
 | 1 | [Valid Parentheses](#valid-parentheses) | Valid Parentheses, Longest Valid Parentheses, Min Remove |
+
 | 2 | [Stack Design Problems](#stack-design-problems) | Min Stack, Online Stock Span, Max Frequency Stack |
 
 ---
