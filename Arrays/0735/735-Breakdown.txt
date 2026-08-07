@@ -1,0 +1,17 @@
+Final attempt:
+- Create stack
+- For each asteroid:
+  - Set a boolean flag survived to true
+  - While the stack isn't empty and the number is on the stack is moving right and the new number is moving left (they'll collide):
+    - The asteroid being hit is stack.peek()
+    - Check if incoming asteroid is bigger than the top element (2 ->> <-- -5). If so, the item on the stack explodes so pop off the stack but the -5 would still survive so survived is unchanged
+    - Check if incoming asteriod is the same magnitude as the top element then both explode. So pop from stack and set survived to false
+    - Else the existing asteroid is bigger so the current asteroid disappears, so set survived to false and break
+  - Check if the asteriod survived before pushing
+  - Pop all the items off the stack and put them into an array
+  - Return the array
+    
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 97.86%)
+- Memory: 46.61 MB (Beats 91.93%)
+- Time taken: 46m 12s
