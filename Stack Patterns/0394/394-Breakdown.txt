@@ -1,0 +1,21 @@
+Final attempt:
+- Keep a string stack and a count stack
+- Keep a stringbuilder substr to store the substring
+- Keep an integer counter
+- For each character in the string:
+  - Check if the character is a digit, and then ensure that could he count multiple digits is taken into account
+  - If the character is an open bracket:
+    - Push the current substring onto the string stack
+    - Push the current count onto the string stack
+    - Reset the substr and count
+  - If the character is a letter, append the character
+  - If the character is a closing bracket:
+    - Store the curret string
+    - Set the substr to stack.pop()
+    - Append the current string repeated by counterStack.pop()
+- Return substr to string
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 42.57 MB (Beats 93.94%)
+- Time taken: 34m  38s
