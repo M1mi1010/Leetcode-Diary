@@ -1,0 +1,19 @@
+Final attempt:
+- Keep a map storing the frequencies of each character
+- Keep another map, mapping each frequency to a stack containing values with that frequency
+- Keep a counter storing the highest frequency
+- When we push values:
+  - Update the frequency of the value
+  - Update the highest frequency if the new item is more frequent
+  - Add a new stack to the frequency stacks
+- When we pop a value:
+  - Pop number from the highest freq stack from freqStacks and store its value
+  - Get the new frequency of the item from the frequency map (its current frequency decremented)
+  - Put the new frequency in the frequency map
+  - If the stack at highestFreq is empty, drement highest frequency
+  - Update value returned
+
+Stats (at time of submission):
+- Runtime: 31 ms (Beats 89.98%)
+- Memory: 71.58 MB (Beats 66.47%)
+- Time taken: 32m 39s
