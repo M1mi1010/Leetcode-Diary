@@ -1,0 +1,14 @@
+Final attempt:
+- Create a global stack variable which stores int arrays
+- Initialise the stack in the initialisation method
+- In the next method set a span counter to 1
+  - If the stack is empty, push a new integer array of size 2, where index 0 is the price and 1 is the span
+  - If the stack isn't empty, remove previous items added whilst the price is greater than or equal to the last item
+    - Increment the stack counter 
+    -  Pop the element 
+- Return the span counter
+
+Stats (at time of submission):
+- Runtime: 25 ms (Beats 91.02%)
+- Memory: 54.50 MB (Beats 45.39%)
+- Time taken: 12m 47s
