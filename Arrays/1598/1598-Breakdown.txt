@@ -10,5 +10,5 @@ Final attempt:
 NOTE: I had forgotten you need to use String.equals() to compare strings
 
 Stats (at time of submission):
-- Runtime: 1 ms (Beats 9.42%)
-- Memory: 43.68 MB (Beats 88.00%)
+- Runtime: 1 ms (Beats 99.70%)
+- Memory: 43.68 MB (Beats 89.15%)
