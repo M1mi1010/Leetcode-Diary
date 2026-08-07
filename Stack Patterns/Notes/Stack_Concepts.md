@@ -2,7 +2,7 @@
 
 | 1 | [Valid Parentheses](#valid-parentheses) | Valid Parentheses, Longest Valid Parentheses, Min Remove |
 
-| 2 | [Stack Design Problems](#stack-design-problems) | Min Stack, Online Stock Span, Max Frequency Stack |
+| 2 | [Min Stack Design](#min-stack-design) | Min Stack, Online Stock Span, Max Frequency Stack |
 
 ---
 
@@ -69,7 +69,7 @@ Storing indices instead of characters unlocks positional information:
 
 ---
 
-## Stack Design Problems
+## Min Stack Design 
 
 **When to use:** When a standard stack isn't enough — you need O(1) access to extra
 information (minimum, maximum, frequency) on top of normal push/pop behaviour.
