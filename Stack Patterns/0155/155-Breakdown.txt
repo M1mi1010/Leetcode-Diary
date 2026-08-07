@@ -1,0 +1,18 @@
+Final attempt:
+- Initialised a new stack
+- Initialised minimum to integer.max_value
+- Pushing: 
+  - Check if the new value is < min, update min
+  - Push new array with value and min
+ - Popping:
+   - Check if the stack is empty after popping, if it is then set min to integer.max_value
+   - Else min is the value of min at the new top of the stack
+- Topping:
+  - Return the top items index 0
+- getMin:
+  - Return top items index 1
+
+Stats (at time of submission):
+- Runtime: 29 ms (Beats 94.36%)
+- Memory: 100.75 MB (Beats 36.98%)
+- Time taken: 8m 48s
