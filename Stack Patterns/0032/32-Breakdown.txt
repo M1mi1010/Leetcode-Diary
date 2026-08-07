@@ -1,0 +1,16 @@
+First attempt:
+- Instinct is to do this using a two pointer but I am practicing the stack pattern
+
+Final attempt:
+- Used a stack, maximum and current longest
+- Push -1 onto the stack in case the whole string is valid
+- Push the opening brackets index onto the stack
+- If a closing bracket is found then pop off the stack
+  - If the stack is empty now, push the index of the closing bracket
+  - Or update max 
+- Return max
+
+Stats (at time of submission):
+- Runtime: 5 ms (Beats 81.53%)
+- Memory: 46.05 MB (Beats 84.20%)
+- Time taken: 33m 20s
