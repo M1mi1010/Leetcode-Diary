@@ -1,0 +1,10 @@
+Final attempt:
+- For each token in the array
+- If the token is an operator, pop the last to numbers perform operation and push result
+- Else push the String number converted to Integer
+- Then pop final answer off the stack
+
+Stats (at time of submission):
+- Runtime: 7 ms (Beats 33.84%)
+- Memory: 45.29 MB (Beats 63.44%)
+- Time taken: 18m 30s
