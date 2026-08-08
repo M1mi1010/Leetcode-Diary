@@ -1,0 +1,9 @@
+Final attempt:
+- Used a two pointer approach similar to 1598 Log Crawler
+- Split the path on the '/' and rebuilt using a skip counter and a pointer
+- Only add items to the new path when skips is 0
+
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 28.33%)
+- Memory: 44.86 MB (Beats 63.96%)
+- Time taken: 21m 51s
