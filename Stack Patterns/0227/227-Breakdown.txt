@@ -1,0 +1,32 @@
+Final attempt:
+- General method is that we encode a negative value into the stack, and when a * or / is found, process the items on the stack
+- Keep a stack global variable 
+- Keep an operator variable which stores the last operator seen
+- For each character in the string (where i is manually controlled):
+  - If the character is an operator, store it in operator variable and increment i
+  - If the character is an empty space, increment i
+  - Else the character must be a digit:
+    - Read characters continuously until i is on a non digit (in case the number is multiple digits)
+    - Now process the number found:
+      - If the current operator is * or / then pop the top number off the stack, divide it by the ucrrent number and push the new number onto the stack
+      - If the current operator is - then push the top element multiplied by -1
+      - Else just push the number because the operator is +
+- Then go through each number in the stack and add them together to get the sum
+
+Example of why this works
+Input: "3 + 2 * 4 - 1"
+See 3, sign=+1  → push +3          stack: [3]
+See +           → sign = +1
+See 2, sign=+1  → peek *, apply immediately... wait, no operator yet, push +2
+                                    stack: [3, 2]
+See *           → next number will be multiplied into top
+See 4           → pop 2, push 2*4=8 stack: [3, 8]
+See -           → sign = -1
+See 1, sign=-1  → push -1          stack: [3, 8, -1]
+
+Sum stack: 3 + 8 + (-1) = 10  ✓
+
+Stats (at time of submission):
+- Runtime: 10 ms (Beats 97.33%)
+- Memory: 48.32 MB (Beats 33.80%)
+- Time taken: 36m 28s
