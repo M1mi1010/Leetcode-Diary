@@ -1,0 +1,17 @@
+Final attempt:
+  - Performed a post order whereby each recursion stage returns the minimum height of the left and right subtree
+  - Also have to check if either right or left of a node are null otherwise the minimum height at the node will be 0 for the null tree:
+        if (root.left == null) {
+            current = rightHeight + 1;
+        }
+        else if (root.right == null) {
+            current = leftHeight + 1;
+        }
+        else {
+            current = leftHeight > rightHeight ? rightHeight + 1 : leftHeight + 1;
+        }
+
+Stats (at time of submission):
+  - Runtime: 4 ms (Beats 71.47%)
+  - Memory: 81.66 MB (Beats 97.02%)
+  - Time taken: 29m 3s
