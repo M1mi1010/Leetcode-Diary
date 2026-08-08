@@ -1,0 +1,19 @@
+Final attempt:
+- I use a stack to store the previous result and sign whenever I encounter a parenthesis, and evaluate the expression in one pass.
+- When you encounter a closed parenthesis, add on what was just before the last open parenthesis (the sign and computed result just before the sign)
+- Keep:
+  - A stack variable for storing sub expressions and signs
+  - A result variable storing the currently computed result
+  - A sign variable storing the last seen sign
+  - A num variable storing the last seen number
+- For each character in the string:
+  - If the character is a digit, store it in num
+  - If the character is a - or +, update the result and update the sign and reset num (because we just saw a sign)
+  - If the character is an open bracket, push the last seen num and sign onto the stack. Reset result, sign and num to be ready to process the new subexpression
+  - If the character is a closed bracket, finish calculating the current result (add current sign and num) and then pop last seen num and sign (before parentheses) and add it to result. Then reset num
+- Compute and return final result by adding sign*num
+
+Stats (at time of submission):
+- Runtime: 10 ms (Beats 80.19%)
+- Memory: 46.17 MB (Beats 93.62%)
+- Time taken: 23m 38s
