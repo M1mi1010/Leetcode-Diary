@@ -1,0 +1,14 @@
+Two pointer approach:
+- This was the brute force method where each index you look as far as possible forward until an item less than the current index is found
+- Far faster than using a stack
+
+Stack approach:
+- See a number i, and then add it to the stack
+- If the item is less than the top of the stack, pop all the items from the stack and calculate the discount for the current item to the stack
+- Update value in array
+- If the item is greater than the top of the stack, push it on
+
+Stats (at time of submission) - TWO POINTER (FASTEST):
+- Runtime: 1 ms (Beats 99.71%)
+- Memory: 45.29 MB (Beats 61.15%)
+- Time taken: 3m 29s
