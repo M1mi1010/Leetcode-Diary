@@ -1,0 +1,14 @@
+HashMap approach:
+- Put all the items in nums2 into a map where the values are keys and the index are the values 
+- Then for every character in nums1:
+  - Get its index in the map
+  - While the index is valid, check if the number at index is > the number in nums1
+    - If it is, then reset nums1 at that index to the nect greatest element in nums2
+    - Increment idx2
+  - If idx2 reaches num2.length, then set nums[i] to -1
+- Return nums1
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 92.67%)
+- Memory:45.32 MB (Beats 36.69%)
+- Time taken: 6m 38s
