@@ -1,0 +1,16 @@
+Final attempt:
+- Create a stack which stores the index (because if you use the index you dont need a counter)
+- Create an array to store the results of each next warmer day
+- Push the initial index onto the stack
+- For each temperature:
+  - Store an integer previous
+  - While the stack isn't emmpty and the current temperarure is greater than the element on the top of the stack:
+    - Pop the item on the top of the stack, and set prev to this
+    - Store the result into the result array (at index prev = i - prev)
+  - Push item onto the stack
+- Return result array
+
+Stats (at time of submission):
+- Runtime: 22 ms (Beats 96.64%)
+- Memory: 103.36 MB (Beats 92.60%)
+- Time taken: 24m 26s
