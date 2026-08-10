@@ -1,0 +1,10 @@
+Final attempt:
+- Create a priority queue in decreasing order
+- Offer each number 
+- When the queue size is greater than k, poll (so the array only contains last few values
+- Return poll.peek
+
+Stats (at time of submission):
+- Runtime: 70 ms (Beats 47.39%)
+- Memory: 78.57 MB (Beats 5.01%)
+- Time taken: 7m 55s
