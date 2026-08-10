@@ -1,0 +1,19 @@
+Final attempt:
+- Use a monotonic increasing stack of indices.
+- For each number:
+  - Look at the top of the stack.
+  - If the current number is smaller than the top:
+      - Pop the top because the smaller current number is better earlier in the subsequence.
+      - Decrease removals.
+      - Keep doing this while possible.
+- Then always push the current index onto the stack.
+-  After processing the entire array:
+  - If you still have removals left, remove elements from the end/top of the stack.
+  - This doesn't change the better choices you've already made at the beginning.
+  - The stack contains exactly k indices.
+- Pop them into the result backwards because the stack reverses their order.
+
+Stats (at time of submission):
+- Runtime: 66 ms (Beats 47.44%)
+- Memory: 108.02 MB (Beats 99.47%)
+- Time taken: 23m 24s
