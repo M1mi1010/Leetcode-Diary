@@ -1,0 +1,11 @@
+Final attempt:
+- Keep a long sum variable and priority queue in descending order
+- Add all the items in the array to the sum and queue
+- While k is greater than 0:
+  - Get the top element, and push it back into queue after sqrting it
+  - Update sum by subtracting the difference between the num and the sqrted num
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 98.93%)
+- Memory: 44.40 MB (Beats 37.78%)
+- Time taken: 9m 57s
