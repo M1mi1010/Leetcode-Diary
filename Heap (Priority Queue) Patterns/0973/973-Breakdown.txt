@@ -1,0 +1,10 @@
+Final attempt:
+- Order the items in the priority queue by comparing the magnitude of index 0 and 1
+- Add all the points into the priority queue
+- If the priority queue is greater than the size k, poll it so only valid elements remain (not necessary but need to avoid the priority queue becoming too big for efficiency)
+- Add the remaining items in the queue to an array which is returned
+
+Stats (at time of submission):
+- Runtime: 29ms (Beats 71.77%)
+- Memory: 53.87 MB (Beats 64.40%)
+- Time taken: 14m 35s
