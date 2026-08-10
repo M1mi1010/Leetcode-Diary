@@ -1,0 +1,11 @@
+Final attempt:
+- Create a priority queue
+- Push items into the queue and then check if the queue is size is than k
+- If it is, poll items
+- When you add an item into the stack, poll if the stack is greater than size
+- Return the item on the top of the stack but don't remove it
+
+Stats (at time of submission):
+- Runtime: 21 ms (Beats 94.40%)
+- Memory: 52.25 MB (Beats 39.37%)
+- Time taken: 9m 52s
