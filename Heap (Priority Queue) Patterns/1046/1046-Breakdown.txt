@@ -1,0 +1,11 @@
+Final attempt:
+- Put all items in array into a decreasing priority queue
+- While the size of the pq is greater than 1:
+  - Get the abs val of top two elements in the stack
+  - If the result is not 0, put the item in queue
+- Return either 0 or the last element (depending if the queue is empty)
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 99.67%)
+- Memory: 42.88 MB (Beats 52.46%)
+- Time taken: 4m 49s
