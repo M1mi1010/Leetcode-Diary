@@ -1,0 +1,11 @@
+Final attempt:
+- Put the first element of every row into the heap
+- Poll the smallest elements
+- If the count == k, aka k polls have been done then return the item at the index we just polled
+- If not, add the next element from that row
+- Repeat
+
+Stats (at time of submission):
+- Runtime: 20 ms (Beats 32.14%)
+- Memory: 51.05 MB (Beats 55.79%)
+- Time taken: 21m 0s
