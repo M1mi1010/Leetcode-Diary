@@ -1,0 +1,14 @@
+Final attempt:
+- Create a priority queue which orders arrays by indices by their sum
+- Put all the pairs of num1 and the first item in nums2 into the queue:
+  (1,2) = 3
+  (7,2) = 9
+  (11,2) = 13
+- Remove the smallest and put it into a results list
+- Add the next item from the same row, this avoids adding every pair possible
+- Repeat until results list is of size k
+
+Stats (at time of submission):
+- Runtime: 34 ms (Beats 55.75%)
+- Memory: 138.63 MB (Beats 43.98%)
+- Time taken: 19m 46s
