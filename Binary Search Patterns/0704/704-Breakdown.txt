@@ -1,0 +1,14 @@
+Final attempt:
+- Standard binary search problem
+- Set a variable right, left and mid
+- While the left pointer is less than or equal to right pointer:
+  - Calculate the midpoint, remember to add left to take into consideration current position in the array
+  - If the number at the index of the midpoint is the target, return the midpoint index
+  - Else if the number at the midpoint is less than the target, set left to after the midpoint and continue
+  - Else the number is lower, and set right to be less than the midpoint
+- Return -1 if less gets to more than right
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 48.36 MB (Beats 50.70%)
+- Time taken: 10m 46s
