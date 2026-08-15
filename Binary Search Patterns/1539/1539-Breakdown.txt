@@ -1,0 +1,14 @@
+Final attempt:
+- Calculate the number of missing elements (the max element in array - length of array)
+- Calculate right, left, and midpoint
+- Whilst left >= left:
+  - Calculate midpoint
+  - Calculate the number missing up to the midpoint
+  - If the number missing is less than k, set left to past midpoint
+  - Else set right to before midpoint
+- Return left + k, because when the while loop breaks left is the first index where noMissing is >= k
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.59 MB (Beats 57.90%)
+- Time taken: 16m 24s
