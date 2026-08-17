@@ -1,0 +1,10 @@
+First approach (using an array):
+- Used an array to store the increments so I can apply them bottom up
+- When you pop get the last increment in the array and add it to the value popped
+- Then reset the increment at that index to 0
+- When calling increment, add the value to every element until k (or max size reached)
+
+First attempt (stats):
+- Runtime: 6 ms (Beats 38.35%)
+- Memory: 47.40 MB (Beats 27.20%)
+- Time taken: 31m 2s
