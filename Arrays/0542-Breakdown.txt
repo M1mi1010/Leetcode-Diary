@@ -1,0 +1,21 @@
+Final attempt:
+- Go through the entire matrix:
+  - If the cell is 0, its distance is 0 and add it to the queue.
+  - Otherwise, set its distance to -1 to represent "unvisited."
+- Then perform multi-source BFS:
+  - All 0s are the starting points simultaneously.
+  - Process the queue level by level.
+  - level = 1 means we're currently discovering cells that are 1 step from a 0.  
+  - For each cell, check its 4 neighbors.
+  - If a neighbor has distance -1, it hasn't been visited:
+    - Set its distance to the current level.
+    - Add it to the queue.
+  - After processing the entire current level, increment level.
+- Return the distance matrix.
+
+NOTE: Because BFS expands outward layer by layer from every 0 simultaneously, the first time we reach a cell, we've reached it via the nearest 0.
+
+Stats (at time of submission):
+- Runtime: 14 ms (Beats 70.04%)
+- Memory: 49.40 MB (Beats 28.36%)
+- Time taken: 24m 50s
