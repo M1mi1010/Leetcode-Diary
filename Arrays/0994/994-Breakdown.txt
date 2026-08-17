@@ -1,0 +1,15 @@
+Final attempt:
+- Keep a store of directions for up down left right from any square
+- First pass of every square of the grid:
+  - If the square is rotten, add the position to the  queue
+  - If its fresh add it to a counter (so we can check the counter at the end to see if any fresh fruit were missed - aka return -1)
+- Then do a BFS with the rotten fruit originally found
+- When you poll, check each direction for the current item
+  - If the new index direction is fresh, decrement the fresh counter, set the item to rotten and add it to the queue
+- At the end of each level of bfs increment the level counter
+- Return level counter if all fresh are found, else -1
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 89.58%)
+- Memory: 44.17 MB (Beats 56.60%)
+- Time taken: 28m 42s
