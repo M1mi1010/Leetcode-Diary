@@ -1,0 +1,17 @@
+Final attempt:
+- Check if the upper corner and lower corner are actually 0, if not return -1 immediately
+- Then check if the matrix only has one element, which we know is 0 from the first check, if so, return 1
+- Keep an array of all the directions that can be taken
+- Keep a queue which stores integer arrays with three fields, i, j and distance to this point
+- Offer the first corner of the grid
+- While the queue is not empty (perform bfs):
+  - Try add each direction to the initial index
+  - If the neighbour is valid AND contains a 0, set it to 1 (to mark the square as seen)
+  - If the neighbour is the corner element, return the distance
+  - Else offer the neighbour into the queue
+- Return -1
+
+Stats (at time of submission):
+- Runtime: 13 ms (Beats 82.14%)
+- Memory: 48.12 MB (Beats 6.49%)
+- Time taken: 19m 19s
