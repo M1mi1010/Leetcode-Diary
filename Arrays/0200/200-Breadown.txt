@@ -1,0 +1,13 @@
+Final attempt:
+- I knew I had to use an array of the different directions (up down left right) which could be added to an index to explore all four directions efficiently
+- Store a global count variable, for each item in the grid if its 1 then increment the counter and call a dfs on the position
+- Dfs:
+  - Store the directions in an array
+  - Mark the grid position as visited with '-'
+  - Add each direction to the index and if the new position is valid, call dfs on it
+- Return the count
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 45.90%)
+- Memory: 52.39 MB (Beats 46.02%)
+- Time taken: 23m 45s
