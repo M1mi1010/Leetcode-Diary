@@ -4,6 +4,7 @@ Final attempt:
   - Calculate the midpoint
   - If its not a bad version low should be set to mid + 1
   - If its a bad version then high should be set to the midpoint
+- Return high
 
 Stats (at time of submission):
 - Runtime: 13 ms (Beats 99.90%)
