@@ -1,0 +1,7 @@
+Final attempt:
+- Normal binary search using the guess function to determine if the current midpoint is above or below the target number
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 42.24 MB (Beats 16.93%)
+- Time taken: 2m 36s
