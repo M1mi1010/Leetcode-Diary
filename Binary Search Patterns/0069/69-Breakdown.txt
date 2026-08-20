@@ -1,0 +1,9 @@
+Final attempt:
+- Set lo to 0, and hi to x
+- Compare midpoint squared to x, updating hi and lo
+- Use long and int when returning midpoint
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 98.26%)
+- Memory: 42.58 MB (Beats 61.88%)
+- Time taken: 9m 34s
