@@ -1,0 +1,15 @@
+Final attempt:
+- CONCEPT: Takes advantage of the fact that before the single item, pairs are always (first item at an even index, second item at an odd index)
+
+- Store an integer lo and hi and mid
+- While lo <= hi, perform a binary search
+  - Calculate the mid point and decrement it if its not even
+  - If hi == lo then the single element is found and return nums[hi]
+  - If the adjacent number is the same then the single item hasn't been found 
+  - Else hi is mid
+- Return -1
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 52.66 MB (Beats 91.09%)
+- Time taken: 17m 5s
