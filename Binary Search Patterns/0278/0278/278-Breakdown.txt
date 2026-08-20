@@ -1,0 +1,11 @@
+Final attempt:
+- Set low and hi to 1 and n
+- While low < high:
+  - Calculate the midpoint
+  - If its not a bad version low should be set to mid + 1
+  - If its a bad version then high should be set to the midpoint
+
+Stats (at time of submission):
+- Runtime: 13 ms (Beats 99.90%)
+- Memory: 41.96 MB (Beats 73.07%)
+- Time taken: 8m 59s
