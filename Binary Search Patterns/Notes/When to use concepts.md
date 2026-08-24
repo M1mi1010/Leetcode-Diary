@@ -6,6 +6,7 @@
 |---|---------|--------------|
 | 1 | [Sorted Array Search](#sorted-array-search-binary-search) | Binary Search, First Bad Version, Search 2D Matrix, Sqrt(x) |
 | 2 | [First/Last Occurrence](#firstlast-occurrence) | Find First and Last Position, Find K Closest Elements |
+| 3 | [Rotated Array / Peak Finding](#rotated-array--peak-finding) | Find Min Rotated, Search Rotated, Find Peak Element, Find in Mountain |
 
 ---
 
@@ -221,3 +222,162 @@ use two binary searches rather than scan inward from a found position.
 |--|------|-------|
 | First/last occurrence | O(log n) | O(1) |
 | K closest elements | O(log(n-k) + k) | O(1) |
+
+## Rotated Array / Peak Finding
+
+**When to use:** Sorted arrays that have been rotated, finding peaks in mountain-shaped
+arrays, binary searching on arrays that aren't fully sorted but have local structure
+you can exploit.
+
+---
+
+### Core Idea
+
+A standard binary search requires the array to be fully sorted. Rotated and mountain
+arrays break full sorting but preserve a key property — at any `mid`, you can always
+determine which half is "more sorted" or which direction the peak/minimum lies. This
+lets you still eliminate half the search space each step.
+
+---
+
+### Find Minimum in Rotated Sorted Array
+
+A sorted array rotated at some pivot has two sorted halves. The minimum is at the
+rotation point — where the array "resets" from high back to low.
+
+```
+[4, 5, 6, 7, 0, 1, 2]
+              ↑ minimum at rotation point
+
+At any mid:
+- If arr[mid] > arr[hi]: minimum is in the RIGHT half (mid is in the left sorted half)
+- If arr[mid] < arr[hi]: minimum is in the LEFT half including mid
+```
+
+```
+lo=0, hi=6
+mid=3 → arr[3]=7 > arr[6]=2 → min is right → lo=4
+mid=5 → arr[5]=1 < arr[6]=2 → min is left  → hi=5
+mid=4 → arr[4]=0 < arr[5]=1 → min is left  → hi=4
+lo=hi=4 → minimum = arr[4] = 0 ✓
+```
+
+---
+
+### Search in Rotated Sorted Array
+
+Find a target in a rotated sorted array. At any `mid`, one half is always fully sorted.
+Check if the target falls within the sorted half — if yes, search there. If no, search
+the other half.
+
+```
+[4, 5, 6, 7, 0, 1, 2], target = 0
+
+mid=3, arr[mid]=7
+Left half [4,5,6,7] is sorted (arr[lo]=4 ≤ arr[mid]=7)
+Is 0 in [4..7]? No → search right half → lo=4
+
+mid=5, arr[mid]=1
+Left half [0,1] is sorted (arr[lo]=0 ≤ arr[mid]=1)
+Is 0 in [0..1]? Yes → search left half → hi=4
+
+mid=4, arr[mid]=0 == target ✓
+```
+
+**The key question at every step:** which half is fully sorted? Then: does the target
+fall in that sorted half?
+
+---
+
+### Rotated Array II (With Duplicates)
+
+When duplicates are allowed, `arr[lo] == arr[mid] == arr[hi]` can occur — you can't
+determine which half is sorted. The only safe move is to shrink both boundaries by 1:
+`lo++; hi--`. This degrades worst case to O(n) but average stays O(log n).
+
+---
+
+### Find Peak Element
+
+A peak is any element greater than its neighbours. The array has no particular global
+structure, but the local slope tells you where to search.
+
+**Key insight:** If `arr[mid] < arr[mid+1]`, the slope goes up to the right — a peak
+must exist to the right (or at the right boundary). If `arr[mid] > arr[mid+1]`, slope
+goes down — a peak exists to the left or at mid.
+
+```
+[1, 2, 3, 1]
+
+mid=1, arr[1]=2 < arr[2]=3 → peak is right → lo=2
+mid=2, arr[2]=3 > arr[3]=1 → peak is left/here → hi=2
+lo=hi=2 → peak = arr[2] = 3 ✓
+```
+
+You never need to check both sides — the slope at mid always guarantees a peak exists
+in one direction.
+
+---
+
+### Peak Index in a Mountain Array
+
+A mountain array strictly increases then strictly decreases — exactly one peak.
+Same logic as Find Peak Element but the structure is guaranteed, making it slightly
+simpler. Follow the slope upward: if `arr[mid] < arr[mid+1]`, go right; else go left.
+
+---
+
+### Find in Mountain Array
+
+Find a target in a mountain array (strictly increases then decreases). Three steps:
+
+1. **Find the peak index** — binary search using slope comparison
+2. **Binary search the ascending left half** `[0, peak]`
+3. **Binary search the descending right half** `[peak, n-1]` (reversed comparisons)
+
+Return the smaller index if found in both halves (left half first). This is three
+separate binary searches chained together — O(log n) total.
+
+```
+Mountain: [1, 2, 3, 4, 5, 3, 1], target = 3
+
+Step 1: peak at index 4 (value 5)
+Step 2: search [1,2,3,4,5] → found at index 2
+Step 3: search [5,3,1] descending → found at index 5
+Return index 2 (smaller) ✓
+```
+
+---
+
+### Choosing the Right Comparison
+
+| Problem | Compare mid to | Direction rule |
+|---|---|---|
+| Find minimum | `arr[hi]` | `arr[mid] > arr[hi]` → go right |
+| Search rotated | `arr[lo]` and target | check which half is sorted |
+| Find peak | `arr[mid+1]` | `arr[mid] < arr[mid+1]` → go right |
+| Mountain peak | `arr[mid+1]` | same as find peak |
+
+---
+
+### Edge Cases to Watch
+- Single element — always the minimum, always the peak, always check if it's the target
+- No rotation (pivot at index 0) — the array is fully sorted; standard binary search
+  conditions handle this naturally
+- Duplicates (Rotated II) — when boundaries equal mid, shrink both; never assume
+  which half is sorted
+- Find in Mountain: target equals peak value — found in step 1 implicitly; make sure
+  your search boundaries include the peak in one of the halves
+- Peak at index 0 or n-1 — problem constraints usually guarantee interior peak, but
+  check the problem statement
+
+---
+
+### Complexity
+| Problem | Time | Space |
+|--|------|-------|
+| Find minimum in rotated | O(log n) | O(1) |
+| Search in rotated | O(log n) | O(1) |
+| Search rotated with duplicates | O(log n) avg, O(n) worst | O(1) |
+| Find peak element | O(log n) | O(1) |
+| Find in mountain array | O(log n) | O(1) |
