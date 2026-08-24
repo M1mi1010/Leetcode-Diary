@@ -1,0 +1,17 @@
+Final attempt:
+- Keep an integer variable hi, lo, mid and a result array set to -1
+- Keep a variable to keep track of instance
+- First pass of binary search, find the left most element:
+  - Same as a normal binary search but when you find nums[mid] ==  target, set instance variable to mid and set hi = mid - 1 so you continue searching left
+- Then if instance is still -1, the item doesn't exist and return result array as it is
+- Otherwise set index 0 to first result
+- Second pass of binary search, find the left most element:
+  - Reset hi to the end of the array, lo is fine because it begins at the first instance 
+  - Same as a normal binary search but when you find nums[mid] ==  target, set instance variable to mid and set lo = mid + 1 so you continue searching left
+- Set result array index 1 to instance
+- Return the result array
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 48.34 MB (Beats 14.20%)
+- Time taken: 12m 3s
