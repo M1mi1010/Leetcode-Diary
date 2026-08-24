@@ -1,0 +1,12 @@
+Final attempt:
+- Set lo to 0, mid and hi to arr.length -1
+- Do a binary search with lo < hi
+  - Calculate mid
+  - If the array is on a downward slope, aka the next element is higher, then lo = mid + 1
+  - Else hi == mid (because mid could be the peak itself, not hi = mid + 1)
+- Return hi
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 80.25 MB (Beats 59.23%)
+- Time taken: 10m 10s
