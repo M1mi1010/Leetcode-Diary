@@ -1,0 +1,13 @@
+Final attempt:
+- Store a variable mid, row, col, number of columns, hi and low
+- Do a binary search
+  - Imagine the 2D array as a 1D one, calculating the midpoint starting from the beginning (0) to end (number of elements)
+  - Then convert the midpoint to find the row and column its in
+  - Then compare the matrix at the midpoint to the target
+  - If the target is found return true, else look above or below the target
+- Return false
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 43.96 MB (Beats 44.19%)
+- Time taken: 22m 41s
