@@ -1,0 +1,12 @@
+Final attempt:
+- Set lo and hi to be 0 and array length, and then mid
+- Binary search while lo < hi:
+  - Calculate midpoint
+  - If nums[mid] is greater than nums[hi] then the first value lies to the right (so lo = mid + 1)
+  - Else hi = mid (including the current midpoint)
+- Return nums[hi]
+
+Stats (at time of submission):
+- Runtime: 0 ms (Beats 100.00%)
+- Memory: 44.06 MB (Beats 8.34%)
+- Time taken: 6m 29s
