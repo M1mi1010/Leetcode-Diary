@@ -1,0 +1,17 @@
+Final attempt:
+- Set lo, hi to be arr.length - k and mid to -1 
+- Set hi to arr.length - k because we are searching for the optimal, left most starting position (either the target or as close to as possible)
+- Then do a binary search:
+  - Checking if x- midpoint is greater than the item k above the current 0-x ,if it is look right (lo = mid + 1)
+  - Else hi = mid
+- Then once the starting poition is found, add it and the k elements to a list of integers
+- Return the list
+
+Note:
+- If searching for a boundary, use lo < hi
+- If searching from an exact value, use lo <= hi
+
+Stats (at time of submission):
+- Runtime: 4 ms (Beats 97.48%)
+- Memory: 47.87 MB (Beats 51.44%)
+- Time taken: 14m 54s
