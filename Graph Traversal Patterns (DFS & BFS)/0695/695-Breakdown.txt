@@ -1,0 +1,19 @@
+Final attempt:
+- Global variable of directions 
+- Keep a variable max
+- Scan the array one square at a time:
+  - If the index is 1, then call dfs which returns an integer and store this in an area variable
+  - Then after the dfs, if area is greater than max, update it 
+- Return max
+- In the dfs method:
+  - Set area to 1, including the current square
+  - Then mark the square as visited to prevent infinite recursion
+  - Calculate each direction:
+    - If its valid and the gris is 1 (unvisited island) then increase the area 
+    - Area increases with the result of dfs on the neighbour
+  - Return area
+
+Stats (at time of submission):
+- Runtime: 2 ms (Beats 63.91%)
+- Memory: 46.37 MB (Beats 82.90%)
+- Time taken: 13m 12s
