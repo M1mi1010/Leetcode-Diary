@@ -1,0 +1,15 @@
+Final attempt:
+- Keep a global variable of directions 
+- If the starting square is the same color as the target color, return it immediately
+- Make a global variable of the original color to know if you should change a squares color to the new one (essentially to know if you are on an island)
+- Set the original piece to the new color
+- Call dfs on starting square:
+  - Set pieces color to be the new color
+  - Check all directions for new indexes
+  - If the new index is valid, and it is the original color, then call dfs on it
+- Return image
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 39.15%)
+- Memory: 46.75 MB (Beats 61.94%)
+- Time taken: 12m 55s
