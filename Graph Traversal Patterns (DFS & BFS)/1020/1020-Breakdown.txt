@@ -1,0 +1,21 @@
+Final attempt:
+- Use a global array of directions
+- Keep a global variable to check if an island has touched an edge
+- DFS on every cell which is 1 in the array and hasnt already been seen
+- Add each island found to the total number of land cells
+- If the island touched an edge add it to the count of validCells (remember question calls for invalid cells)
+- In the DFS function:
+  - Return int
+  - Initialise a variable size to 0
+  - If the starting cell is on an edge, set touchesEdge to true
+  - Check all directions from the cell
+  - If the cell is valid, hasnt been seen and also is a land cell, mark it as seen and add dfs result to size
+  - Return size + 1 (to account for first cell)
+
+Stats (at time of submission):
+- Runtime: 16 ms (Beats 5.27)
+- Memory: 60.51 MB (Beats 49.30%)
+- Time taken: 28 m 31 s
+
+
+NOTE: Need to improve, could do one pass checking and counting all the land cells, then in a second pass dfs from edges inwards, count the number of islands found and subtract from total
