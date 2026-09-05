@@ -66,8 +66,8 @@ class Solution {
                     }
                 }
             }
-            if (!touchedEdge) surIslands.addAll(island);
-            else restoreIslands.addAll(island);
         }
+        if (!touchedEdge) surIslands.addAll(island);
+        else restoreIslands.addAll(island);
     }
 }
