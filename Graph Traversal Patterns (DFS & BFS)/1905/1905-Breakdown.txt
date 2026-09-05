@@ -1,0 +1,15 @@
+Final attempt:
+- Global directions variable
+- Global inBoth variable
+- Keep a counter
+- Traverse every element in grid2, if its 1 then dfs
+- If in Both is true after the dfs then increment the counter
+Within DFS:
+- If the element is 0 in grid1 (aka doesnt match) then set inBoth to false and return
+- Set the item to 0 so its seen
+- Traverse all directions and only dfs on a valid land item
+
+Stats (at time of submission):
+- Runtime: 21 ms (Beats 69.38%)
+- Memory: 119.16 MB (Beats 66.13%)
+- Time taken: 14m 35s
