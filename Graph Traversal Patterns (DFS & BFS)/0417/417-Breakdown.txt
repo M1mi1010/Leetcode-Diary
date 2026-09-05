@@ -23,3 +23,7 @@ Final attempt:
 - NOTE: you need to know where the bfs originated from because we need to know whether BOTH oceans can be reached
 - Think of the problem as two problems: can element be reached from the pacific ocean, can it be reached from the atlantic ocean?
   
+Stats (at time of submission):
+- Runtime: 6 ms (Beats 36.41%)
+- Memory: 47.70 MB (Beats 18.25%)
+- Time taken: 35m 9s
