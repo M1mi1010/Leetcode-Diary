@@ -1,0 +1,11 @@
+Final attempt:
+- First do dfs on all land on the edges and turn into water to mark it as seen because if it touches an edge it cannot be a connexted island
+- Then create a coutner
+- Check every cell in the grid, if its 0 (land) then do dfs
+- Increment count every time you do dfs, aka counting the number of closed islands
+- Return count
+
+Stats (at time of submission):
+- Runtime: 3 ms (Beats 42.56%)
+- Memory: 46.71 MB (Beats 11.65%)
+- Time taken: 32m 46s (with distractions)
