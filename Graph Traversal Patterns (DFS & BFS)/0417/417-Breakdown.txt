@@ -1,0 +1,25 @@
+First attempt:
+- Didnt initially use two seen arrays and perform two bfs 
+- Didnt initially use two seen arrays
+- Also originally was doing bfs from every square in the grid rather than working inwards from the edges
+
+Final attempt:
+- CONCEPT: Move inwards from the ocean edges for atlantic, mark all the cells that can reach the atlantic ocean, do the same for the pacific ocean. Then check each cell in the grid, seeing if it is reachable from both oceans
+
+- Keep a global array for seenAt, seenPac, the directions and result returned from the main array
+- In the main method, call bfs from seenPac and then do for seenAt rows, then cols
+- Then check if each index in the grid was reachable from both
+- In the BFS method:
+  - Takes in the original heights grid, row and column of the starting position and the seen grid (aka determining which ocean we are travelling from
+  - Instantiate a linked list queue
+  - Offer starting position
+  - While the queue isnt empty:
+    - Poll
+    - Check each direction from the polled element
+    - If the element is valid, set the seen grid to be 1
+    - Add the neighbour if its less than the current cells value
+    - Set the neighbour to seen
+
+- NOTE: you need to know where the bfs originated from because we need to know whether BOTH oceans can be reached
+- Think of the problem as two problems: can element be reached from the pacific ocean, can it be reached from the atlantic ocean?
+  
