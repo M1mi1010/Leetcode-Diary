@@ -1,0 +1,16 @@
+Final attempt:
+Find every 'O'.
+When you find one, run BFS to discover the entire connected island of 'O's.
+Temporarily change visited 'O's to 'S' so you don't visit them again.
+During BFS, check whether any cell of the island touches the border.
+Store the island's coordinates in either:
+surIslands → should become 'X'
+restoreIslands → should remain 'O'
+Finally, convert:
+surIslands → 'X'
+restoreIslands → 'O'
+
+Stats (at time of submiission):
+- Runtime: 5 ms (Beats 9.46%)
+- Memory: 48.62 MB (Beats 5.02%)
+- Time taken: 38m 44s
