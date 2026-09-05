@@ -1,0 +1,69 @@
+class Solution {
+    List<List<Integer>> result = new ArrayList<>();
+    int[][] seenAt;
+    int[][] seenPac;
+    int[][] dirs = {
+        {0,1},
+        {0, -1},
+        {1, 0},
+        {-1, 0}
+    };
+
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+        //Look at a position, use bfs to see if you can get to the pacific or atlantic ocean
+        seenAt = new int[heights.length][heights[0].length];
+        seenPac = new int[heights.length][heights[0].length];
+
+        for (int i = 0; i < heights.length; i++) {
+            bfs(heights, i, 0, seenPac);
+            bfs(heights, i, heights[0].length - 1, seenAt);
+        }
+
+        for (int j = 0; j < heights[0].length; j++) {
+            bfs(heights, 0, j, seenPac);
+            bfs(heights, heights.length - 1, j, seenAt);
+        }
+
+        for (int i = 0; i < heights.length; i++) {
+            for (int j = 0; j < heights[0].length; j++) {
+                if (seenAt[i][j] == 1 && seenPac[i][j] == 1) {
+                    result.add(Arrays.asList(i, j));
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private void bfs(int[][] heights, int i, int j, int[][] seen) {
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{i, j});
+        seen[i][j] = 1;
+
+        int size = q.size();
+        int pacAtReached = 0;
+
+        while (!q.isEmpty()) {
+            int[] item = q.poll();
+
+            for (int[] dir : dirs) {
+                int ni = dir[0] + item[0];
+                int nj = dir[1] + item[1];
+
+                if (ni >= 0 && ni < heights.length && nj >= 0 && nj < heights[0].length) {
+
+                    //If 2 then the starting position does reach both and no need to contiinue doing the bfs 
+
+                    if (seen[ni][nj] == 1) continue;
+
+                    //Else add neighbour if its less than current cells value
+                    if (heights[item[0]][item[1]] <= heights[ni][nj]) {
+                        seen[ni][nj] = 1;
+                        q.offer(new int[]{ni,nj});
+                    }
+                }
+            }
+        }
+        
+    }
+}
