@@ -1,0 +1,19 @@
+Final attempt:
+- Make a hashmap to keep track of which node corresponds to which cloned node
+- Create a queue to do a BFS on the graph
+- Start by cloning the starting node, and adding node -> clonedStartNode into the map, then add it to the queue
+- While the queue isnt empty:
+  - Poll an element
+  - Then for each of the elements neighbours, check if its been seen before (aka if the hashmap contains an entry because this entry represents the element has been seen and a copy of it has been made)
+    - If the neighbor has NOT been seen:
+      - Clone the neighbor
+      - Add an entry to the map from the neighbor to its copy to indicate that the node has been copied
+      - Add the original neighbor node to the queue
+    - Connect the edge between the original node polled to the neighbor being seen for the cloned graph (aka add neighbor to the current nodes neighbors list
+- Return the cloned first element 
+
+
+Stats (at time of submission):
+- Runtime: 25 ms (Beats 76.19%)
+- Memory: 44.14 Mb (Beats 76.32%)
+- Time taken: 20m 4s
