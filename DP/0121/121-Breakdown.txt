@@ -1,0 +1,11 @@
+Final attempt:
+- Keep track of maxProfit and then the minValue
+- For each item in the prices:
+  - Update the minimum value seen
+  - If the difference between the current item and the minimum one seen is greater than maxVal, update it
+- Return the max price difference seen
+
+Stats (at time of submission):
+- Runtime: 1 ms (Beats 99.94%)
+- Memory: 94.30 MB (Beats 84.98%)
+- Time taken: 2m 48s 
